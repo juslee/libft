@@ -6,37 +6,27 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/12 17:40:47 by welee            ###   ########.fr        #
+#    Updated: 2024/04/12 20:06:32 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-SRCS_DIR = srcs
-INCLUDES_DIR = includes
-TEST_DIR = tests
-DIST_DIR = dist
 
-INCLUDES = -I ${INCLUDES_DIR}
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LIBC = ar rcs
 RM = rm -f
 MKDIR = mkdir -p
-OBJECTS_DIR = objs
 
-SRCS = $(shell find $(SRCS_DIR) -name '*.c')
-OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJECTS_DIR)/%.o)
-
-NORM = norminette
-NORM_FLAGS = -R CheckForbiddenSourceHeader -R CheckDefine
+SRCS = $(wildcard *.c)
+OBJS = $(SRCS:%.c=%.o)
 
 all: ${NAME}
 
 $(NAME): $(OBJS)
 	${LIBC} ${NAME} ${OBJS}
 
-$(OBJECTS_DIR)/%.o: $(SRCS_DIR)/%.c
-	$(MKDIR) $(@D)
+%.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
@@ -44,17 +34,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) -r $(DIST_DIR)
 
 re: fclean all dist
 
-norminette:
-	$(NORM) $(NORM_FLAGS) $(SRCS_DIR) $(INCLUDES_DIR)
-
-dist:
-	$(MKDIR) $(DIST_DIR)
-	find $(SRCS_DIR) -type f -exec cp {} $(DIST_DIR) \;
-	cp -f Makefile $(DIST_DIR)
-#	cp -r $(SRCS_DIR) $(INCLUDES_DIR) Makefile $(DIST_DIR)
-
-.PHONY: all clean fclean re norminette dist
+.PHONY: all clean fclean re

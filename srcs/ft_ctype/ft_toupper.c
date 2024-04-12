@@ -6,11 +6,11 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 12:32:00 by welee             #+#    #+#             */
-/*   Updated: 2024/04/12 12:36:51 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/12 20:08:46 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ctype.h"
+#include "libft.h"
 
 /// @brief Convert lowercase letter to uppercase
 /// @param c The character to convert

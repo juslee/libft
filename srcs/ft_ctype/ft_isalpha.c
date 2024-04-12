@@ -6,11 +6,11 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:25:35 by welee             #+#    #+#             */
-/*   Updated: 2024/04/12 12:37:58 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/12 20:08:00 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ctype.h"
+#include "libft.h"
 
 /// @brief Check if the character is an alphabet
 /// @param c The character to check
