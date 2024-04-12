@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/04/12 17:28:45 by welee            ###   ########.fr       */
+/*   Created: 2024/04/12 17:13:44 by welee             #+#    #+#             */
+/*   Updated: 2024/04/12 17:16:06 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
 
-# include "ft_ctype.h"
-# include "ft_string.h"
+/// @brief Calculate the length of a string
+/// @param s The string to calculate the length
+/// @return The length of the string
+size_t	strlen(const char *s)
+{
+	size_t	len;
 
-#endif
+	len = 0;
+	while (s[len])
+		++len;
+	return (len);
+}

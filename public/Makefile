@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/12 17:48:28 by welee            ###   ########.fr        #
+#    Updated: 2024/04/12 17:40:47 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ SRCS_DIR = srcs
 INCLUDES_DIR = includes
 TEST_DIR = tests
 DIST_DIR = dist
-PUBLIC_DIR = public
 
 INCLUDES = -I ${INCLUDES_DIR}
 CC = cc
@@ -50,12 +49,12 @@ fclean: clean
 re: fclean all dist
 
 norminette:
-	$(NORM) $(NORM_FLAGS) $(SRCS_DIR) $(INCLUDES_DIR) $(PUBLIC_DIR)
+	$(NORM) $(NORM_FLAGS) $(SRCS_DIR) $(INCLUDES_DIR)
 
 dist:
 	$(MKDIR) $(DIST_DIR)
 	find $(SRCS_DIR) -type f -exec cp {} $(DIST_DIR) \;
-	cp -f $(PUBLIC_DIR) $(DIST_DIR)
+	cp -f Makefile $(DIST_DIR)
 #	cp -r $(SRCS_DIR) $(INCLUDES_DIR) Makefile $(DIST_DIR)
 
 .PHONY: all clean fclean re norminette dist

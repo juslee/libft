@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/04/12 17:28:45 by welee            ###   ########.fr       */
+/*   Created: 2024/04/12 17:16:33 by welee             #+#    #+#             */
+/*   Updated: 2024/04/12 17:16:52 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_STRING_H
+# define FT_STRING_H
 
-# include "ft_ctype.h"
-# include "ft_string.h"
+# include <stddef.h>
+
+size_t	ft_strlen(const char *s);
 
 #endif
