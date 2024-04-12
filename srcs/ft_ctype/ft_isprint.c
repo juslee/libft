@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:36:02 by welee             #+#    #+#             */
-/*   Updated: 2024/04/12 12:39:00 by welee            ###   ########.fr       */
+/*   Created: 2024/04/12 12:23:45 by welee             #+#    #+#             */
+/*   Updated: 2024/04/12 12:31:52 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
-
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-int	ft_isprint(int c);
-int	ft_toupper(int c);
-int	ft_tolower(int c);
-int	ft_isupper(int c);
-int	ft_islower(int c);
-
-#endif
+/// @brief Check if the character is a printable character
+/// @param c The character to check
+/// @return nonzero if the character c falls into the and zero if not
+int	ft_isprint(int c)
+{
+	if (c >= 32 && c <= 126)
+		return (c);
+	return (0);
+}

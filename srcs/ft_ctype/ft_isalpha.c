@@ -6,16 +6,18 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:25:35 by welee             #+#    #+#             */
-/*   Updated: 2024/04/11 16:34:54 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/12 12:37:58 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_ctype.h"
 
 /// @brief Check if the character is an alphabet
 /// @param c The character to check
 /// @return nonzero if the character c falls into the and zero if not
 int	ft_isalpha(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	if (ft_isupper(c) || ft_islower(c))
 		return (c);
 	return (0);
 }

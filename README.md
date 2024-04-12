@@ -6,12 +6,14 @@ It will contain a lot of general purpose functions your programs will rely upon.
 ### Libc Library Functions
 #### Functions from <ctype.h> library
 - [x] ft_isalpha
-- [ ] ft_isdigit
-- [ ] ft_isalnum
-- [ ] ft_isascii
-- [ ] ft_isprint
-- [ ] ft_toupper
-- [ ] ft_tolower
+- [x] ft_isdigit
+- [x] ft_isalnum
+- [x] ft_isascii
+- [x] ft_isprint
+- [x] ft_toupper
+- [x] ft_tolower
+- [x] ft_islower **(optional)**
+- [x] ft_isupper **(optional)**
 #### Functions from <string.h> library
 - [ ] ft_strlen
 - [ ] ft_strlcpy
