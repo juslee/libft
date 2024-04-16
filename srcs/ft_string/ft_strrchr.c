@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:32:01 by welee             #+#    #+#             */
-/*   Updated: 2024/04/16 15:40:16 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/16 16:53:28 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*ft_strrchr(const char *s, int c)
 	cc = (char) c;
 	res = NULL;
 	i = 0;
-
 	while (s[i])
 	{
 		if (s[i] == cc)
@@ -38,6 +37,5 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (s[i] == c)
 		res = (char *) &s[i];
-
 	return (res);
 }
