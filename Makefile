@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/12 20:12:55 by welee            ###   ########.fr        #
+#    Updated: 2024/04/16 16:41:31 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ MKDIR = mkdir -p
 
 SRCS = $(shell find $(SRCS_DIR) -name '*.c')
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
+HEADERS = $(wildcard $(INCLUDES_DIR)/ft_*.h)
+COMBINED_HEADER = $(DIST_DIR)/libft.h
 
 NORM = norminette
 NORM_FLAGS = -R CheckForbiddenSourceHeader -R CheckDefine
@@ -42,17 +44,38 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 
 clean:
 	$(RM) -r $(OBJS_DIR)
+	$(RM) -r $(DIST_DIR)
+	$(RM) $(COMBINED_HEADER)
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) -r $(DIST_DIR)
 
 re: fclean all dist
 
 norminette:
 	$(NORM) $(NORM_FLAGS) $(SRCS_DIR) $(INCLUDES_DIR) $(PUBLIC_DIR)
 
-dist:
+$(COMBINED_HEADER): $(HEADERS)
+	$(MKDIR) $(DIST_DIR)
+	@echo "/* ************************************************************************** */" > $@
+	@echo "/*                                                                            */" >> $@
+	@echo "/*                                                        :::      ::::::::   */" >> $@
+	@echo "/*   libft.h                                            :+:      :+:    :+:   */" >> $@
+	@echo "/*                                                    +:+ +:+         +:+     */" >> $@
+	@echo "/*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */" >> $@
+	@echo "/*                                                +#+#+#+#+#+   +#+           */" >> $@
+	@echo "/*   Created: `date "+%Y/%m/%d %H:%M:%S"` by welee             #+#    #+#             */" >> $@
+	@echo "/*   Created: `date "+%Y/%m/%d %H:%M:%S"` by welee            ###   ########.fr       */" >> $@
+	@echo "/*                                                                            */" >> $@
+	@echo "/* ************************************************************************** */" >> $@
+	@echo "" >> $@
+	@echo "#ifndef LIBFT_H" >> $@
+	@echo "# define LIBFT_H" >> $@
+	@echo "# include <stddef.h>" >> $@
+	@$(foreach hdr,$(HEADERS),cat $(hdr) | sed -e '1,/^#ifndef FT_.*_H/d' -e '/^#endif/d' -e '/^# define FT_.*_H/d' | sed '/^# include <stddef.h>/d' >> $@;)
+	@echo "#endif" >> $@
+
+dist: $(COMBINED_HEADER)
 	$(MKDIR) $(DIST_DIR)
 	find $(SRCS_DIR) -type f -exec cp {} $(DIST_DIR) \;
 	cp -f $(PUBLIC_DIR)/* $(DIST_DIR)
