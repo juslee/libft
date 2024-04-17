@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/16 16:41:31 by welee            ###   ########.fr        #
+#    Updated: 2024/04/17 09:54:45 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,6 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 clean:
 	$(RM) -r $(OBJS_DIR)
 	$(RM) -r $(DIST_DIR)
-	$(RM) $(COMBINED_HEADER)
 
 fclean: clean
 	$(RM) $(NAME)
@@ -56,7 +55,7 @@ norminette:
 	$(NORM) $(NORM_FLAGS) $(SRCS_DIR) $(INCLUDES_DIR) $(PUBLIC_DIR)
 
 $(COMBINED_HEADER): $(HEADERS)
-	$(MKDIR) $(DIST_DIR)
+	@$(MKDIR) $(DIST_DIR)
 	@echo "/* ************************************************************************** */" > $@
 	@echo "/*                                                                            */" >> $@
 	@echo "/*                                                        :::      ::::::::   */" >> $@
@@ -65,7 +64,7 @@ $(COMBINED_HEADER): $(HEADERS)
 	@echo "/*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */" >> $@
 	@echo "/*                                                +#+#+#+#+#+   +#+           */" >> $@
 	@echo "/*   Created: `date "+%Y/%m/%d %H:%M:%S"` by welee             #+#    #+#             */" >> $@
-	@echo "/*   Created: `date "+%Y/%m/%d %H:%M:%S"` by welee            ###   ########.fr       */" >> $@
+	@echo "/*   Updated: `date "+%Y/%m/%d %H:%M:%S"` by welee            ###   ########.fr       */" >> $@
 	@echo "/*                                                                            */" >> $@
 	@echo "/* ************************************************************************** */" >> $@
 	@echo "" >> $@
@@ -79,6 +78,5 @@ dist: $(COMBINED_HEADER)
 	$(MKDIR) $(DIST_DIR)
 	find $(SRCS_DIR) -type f -exec cp {} $(DIST_DIR) \;
 	cp -f $(PUBLIC_DIR)/* $(DIST_DIR)
-#	cp -r $(SRCS_DIR) $(INCLUDES_DIR) Makefile $(DIST_DIR)
 
 .PHONY: all clean fclean re norminette dist
