@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/17 09:54:45 by welee            ###   ########.fr        #
+#    Updated: 2024/04/17 09:58:09 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ INCLUDES_DIR = includes
 TEST_DIR = tests
 DIST_DIR = dist
 PUBLIC_DIR = public
+BIN_DIR = bin
 
 INCLUDES = -I ${INCLUDES_DIR}
 CC = cc
@@ -36,7 +37,8 @@ NORM_FLAGS = -R CheckForbiddenSourceHeader -R CheckDefine
 all: ${NAME}
 
 $(NAME): $(OBJS)
-	${LIBC} ${NAME} ${OBJS}
+	$(MKDIR) $(BIN_DIR)
+	$(LIBC) $(BIN_DIR)/$(NAME) $(OBJS)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(MKDIR) $(@D)
@@ -47,7 +49,7 @@ clean:
 	$(RM) -r $(DIST_DIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(BIN_DIR)/$(NAME)
 
 re: fclean all dist
 
