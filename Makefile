@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/18 15:39:36 by welee            ###   ########.fr        #
+#    Updated: 2024/04/18 16:49:27 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ CFLAGS = -Wall -Wextra -Werror
 LIBC = ar rcs
 RM = rm -f
 MKDIR = mkdir -p
+MAKE = make -C
 
 SRCS = $(shell find $(SRCS_DIR) -name '*.c')
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
@@ -45,11 +46,12 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	$(RM) -r $(OBJS_DIR)
-	$(RM) -r $(DISTS_DIR)
+	$(RM) $(OBJS)
+	$(RM) -r $(DIST_DIR)
+	$(MAKE) $(TEST_DIR) clean
 
 fclean: clean
-	$(RM) -r $(BIN_DIR)
+	$(RM) $(BIN_DIR)/$(NAME)
 
 re: fclean all dist
 
@@ -82,6 +84,6 @@ dist: $(COMBINED_HEADER)
 	@cp -f $(PUBLIC_DIR)/* $(DIST_DIR)
 
 test: all
-	$(MAKE) -C $(TEST_DIR)
+	$(MAKE) $(TEST_DIR)
 
-.PHONY: all clean fclean re norm dist
+.PHONY: all clean fclean re norm dist test

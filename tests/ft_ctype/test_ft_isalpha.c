@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:59:56 by welee             #+#    #+#             */
-/*   Updated: 2024/04/18 14:41:56 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/18 16:43:04 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ int	ft_isalpha(int c);
 
 void	test_ft_isalpha(int c)
 {
-	int	ft_alpha;
-
 	printf("case: \"%c\" -> %d\n", (char)c, isalpha(c));
-	ft_alpha = ft_isalpha(c);
-	printf("  ft_isalpha: %d\n", ft_alpha);
-	assert(ft_alpha == isalpha(c));
+	printf("  ft_isalpha: %d\n", ft_isalpha(c));
+	assert(ft_isalpha(c) == isalpha(c));
 }
 
 int	main(void)

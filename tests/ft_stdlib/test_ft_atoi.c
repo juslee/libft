@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:40:56 by welee             #+#    #+#             */
-/*   Updated: 2024/04/18 14:51:00 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/18 16:41:46 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@ int	ft_atoi(const char *nptr);
 
 void	test_ft_atoi(const char *nptr)
 {
-	int	ft_atoi_result;
-	int	atoi_result;
-
 	printf("case: \"%s\" -> %d\n", nptr, atoi(nptr));
-	ft_atoi_result = ft_atoi(nptr);
-	printf("  ft_atoi: %d\n", ft_atoi_result);
-	assert(ft_atoi_result == atoi(nptr));
+	printf("  ft_atoi: %d\n", ft_atoi(nptr));
+	assert(ft_atoi(nptr) == atoi(nptr));
 }
 
 int	main(void)
