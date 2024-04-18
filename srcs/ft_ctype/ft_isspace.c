@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:36:02 by welee             #+#    #+#             */
-/*   Updated: 2024/04/18 14:13:30 by welee            ###   ########.fr       */
+/*   Created: 2024/04/18 14:07:32 by welee             #+#    #+#             */
+/*   Updated: 2024/04/18 14:12:46 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
-
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_isupper(int c);
-int		ft_islower(int c);
-int		ft_isspace(int c);
-#endif
+/// @brief Check if a character is a space
+/// @param c The character to check
+/// @return 1 if the character is a space, 0 otherwise
+int	ft_isspace(int c)
+{
+	return (c == ' ' || (c >= '\t' && c <= '\r'));
+}

@@ -6,17 +6,17 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/17 09:58:09 by welee            ###   ########.fr        #
+#    Updated: 2024/04/18 15:39:36 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+PUBLIC_DIR = public
 SRCS_DIR = srcs
 OBJS_DIR = objs
 INCLUDES_DIR = includes
 TEST_DIR = tests
 DIST_DIR = dist
-PUBLIC_DIR = public
 BIN_DIR = bin
 
 INCLUDES = -I ${INCLUDES_DIR}
@@ -46,14 +46,14 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 
 clean:
 	$(RM) -r $(OBJS_DIR)
-	$(RM) -r $(DIST_DIR)
+	$(RM) -r $(DISTS_DIR)
 
 fclean: clean
-	$(RM) $(BIN_DIR)/$(NAME)
+	$(RM) -r $(BIN_DIR)
 
 re: fclean all dist
 
-norminette:
+norm:
 	$(NORM) $(NORM_FLAGS) $(SRCS_DIR) $(INCLUDES_DIR) $(PUBLIC_DIR)
 
 $(COMBINED_HEADER): $(HEADERS)
@@ -73,12 +73,15 @@ $(COMBINED_HEADER): $(HEADERS)
 	@echo "#ifndef LIBFT_H" >> $@
 	@echo "# define LIBFT_H" >> $@
 	@echo "# include <stddef.h>" >> $@
-	@$(foreach hdr,$(HEADERS),cat $(hdr) | sed -e '1,/^#ifndef FT_.*_H/d' -e '/^#endif/d' -e '/^# define FT_.*_H/d' | sed '/^# include <stddef.h>/d' >> $@;)
+	@$(foreach hdr,$(HEADERS),cat $(hdr) | sed -e '1,/^#ifndef FT_.*_H/d' -e '/^#endif/d' -e '/^# define FT_.*_H/d' | sed '/^# include */d' >> $@;)
 	@echo "#endif" >> $@
 
 dist: $(COMBINED_HEADER)
-	$(MKDIR) $(DIST_DIR)
-	find $(SRCS_DIR) -type f -exec cp {} $(DIST_DIR) \;
-	cp -f $(PUBLIC_DIR)/* $(DIST_DIR)
+	@$(MKDIR) $(DIST_DIR)
+	@find $(SRCS_DIR) -type f -exec cp {} $(DIST_DIR) \;
+	@cp -f $(PUBLIC_DIR)/* $(DIST_DIR)
 
-.PHONY: all clean fclean re norminette dist
+test: all
+	$(MAKE) -C $(TEST_DIR)
+
+.PHONY: all clean fclean re norm dist

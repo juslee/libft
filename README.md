@@ -14,18 +14,19 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_tolower
 - [x] ft_islower **(optional)**
 - [x] ft_isupper **(optional)**
+- [x] ft_isspace **(optional)**
 #### Functions from <string.h> library
 - [x] ft_strlen
 - [x] ft_strlcpy
 - [x] ft_strlcat
-- [ ] ft_strchr
-- [ ] ft_strrchr
-- [ ] ft_strnstr
-- [ ] ft_strncmp
-- [ ] ft_atoi
-- [ ] ft_strdup
+- [x] ft_strchr
+- [x] ft_strrchr
+- [x] ft_strncmp
+- [x] ft_strnstr
+- [x] ft_strdup
 - [x] ft_memcpy
 #### Functions from <stdlib.h> library
+- [x] ft_atoi
 - [ ] ft_memset
 - [ ] ft_bzero
 - [ ] ft_memmove

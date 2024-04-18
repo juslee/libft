@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:36:02 by welee             #+#    #+#             */
-/*   Updated: 2024/04/18 14:13:30 by welee            ###   ########.fr       */
+/*   Created: 2024/04/18 13:32:43 by welee             #+#    #+#             */
+/*   Updated: 2024/04/18 13:35:48 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
+#include <stdlib.h>
+#include "libft.h"
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_isupper(int c);
-int		ft_islower(int c);
-int		ft_isspace(int c);
-#endif
+char *ft_strdup(const char *s)
+{
+	char	*dup;
+	size_t	len;
+
+	len = ft_strlen(s) + 1;
+	dup = (char *)malloc(len);
+	if (dup == NULL)
+		return (NULL);
+	ft_memcpy(dup, s, len);
+	return (dup);
+}
