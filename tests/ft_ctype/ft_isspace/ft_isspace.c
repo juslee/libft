@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 12:35:12 by welee             #+#    #+#             */
-/*   Updated: 2024/04/22 12:42:44 by welee            ###   ########.fr       */
+/*   Created: 2024/04/22 12:36:06 by welee             #+#    #+#             */
+/*   Updated: 2024/04/22 12:36:27 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/// @brief Check if the character is a lowercase letter
-/// @param c The character to check
-/// @return nonzero if the character c falls into the and zero if not
-int	ft_islower(int c)
+#include <ctype.h>
+#include <stdio.h>
+#include <assert.h>
+#include "libft.h"
+
+void	test_ft_isspace(int c)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	printf("case: \"%c\" -> %d\n", (char)c, isspace(c));
+	printf("  ft_isspace: %d\n", ft_isspace(c));
+	assert(ft_isspace(c) == isspace(c));
+}
+
+int	main(void)
+{
+	int	start;
+	int	end;
+
+	start = -1;
+	end = 255;
+	while (start <= end)
+	{
+		test_ft_isspace(start);
+		++start;
+	}
 }

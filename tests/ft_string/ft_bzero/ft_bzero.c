@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_strlen.c                                   :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 14:49:08 by welee             #+#    #+#             */
-/*   Updated: 2024/04/18 16:45:48 by welee            ###   ########.fr       */
+/*   Created: 2024/04/22 15:06:02 by welee             #+#    #+#             */
+/*   Updated: 2024/04/22 15:15:28 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
-void	test_ft_strlen(const char *s)
+void	test_ft_bzero(size_t n)
 {
-	printf("case: \"%s\" -> %lu\n", s, strlen(s));
-	printf("  ft_strlen: %lu\n", ft_strlen(s));
-	assert(ft_strlen(s) == strlen(s));
+	char	*std;
+	char	*ft;
+
+	std = malloc(n);
+	ft = malloc(n);
+	bzero(std, n);
+	ft_bzero(ft, n);
+	assert(memcmp(std, ft, n) == 0);
+	free(std);
+	free(ft);
 }
 
 int	main(void)
 {
-	test_ft_strlen("");
-	test_ft_strlen("Hello, world!");
-	test_ft_strlen("1234567890");
-	test_ft_strlen("abcdefghijklmnopqrstuvwxyz");
-	test_ft_strlen("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-	test_ft_strlen("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
+	test_ft_bzero(0);
+	test_ft_bzero(1);
+	test_ft_bzero(2);
+	test_ft_bzero(3);
+	test_ft_bzero(4);
+	test_ft_bzero(5);
+	test_ft_bzero(6);
+	test_ft_bzero(7);
 }

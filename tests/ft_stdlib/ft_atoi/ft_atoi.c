@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:40:56 by welee             #+#    #+#             */
-/*   Updated: 2024/04/18 16:41:46 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/22 11:40:05 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,21 @@ int	main(void)
 {
 	test_ft_atoi("");
 	test_ft_atoi("0");
-	test_ft_atoi("1");
-	test_ft_atoi("42");
-	test_ft_atoi(" 42");
-	test_ft_atoi("42 ");
-	test_ft_atoi(" 42 ");
-	test_ft_atoi(" 42a");
-	test_ft_atoi(" 42a42");
-	test_ft_atoi(" 42a42 ");
-	test_ft_atoi(" 42a42a");
-	test_ft_atoi(" 42a42a ");
+	test_ft_atoi("546:5");
+	test_ft_atoi("-4886");
+	test_ft_atoi("+548");
+	test_ft_atoi("054854");
+	test_ft_atoi("000074");
+	test_ft_atoi("+-54");
+	test_ft_atoi("-+48");
+	test_ft_atoi("--47");
+	test_ft_atoi("++47");
+	test_ft_atoi("+47+5");
+	test_ft_atoi("-47-5");
+	test_ft_atoi("\e475");
+	test_ft_atoi("\t\n\r\v\f  469 \n");
+	test_ft_atoi("-2147483648");
+	test_ft_atoi("2147483647");
+	test_ft_atoi("\t\n\r\v\fd469 \n");
+	test_ft_atoi("\n\n\n  -46\b9 \n5d6");
 }

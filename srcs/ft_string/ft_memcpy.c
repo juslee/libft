@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:47:39 by welee             #+#    #+#             */
-/*   Updated: 2024/04/16 16:52:53 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/22 13:16:49 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /// @brief Copy memory area
 /// @param dst void pointer to the destination
 /// @param src void pointer to the source
-/// @param n Number of bytes to copy
+/// @param n number of bytes to copy
 /// @return The original destination pointer
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
