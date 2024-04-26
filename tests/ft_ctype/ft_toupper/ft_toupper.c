@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:37:41 by welee             #+#    #+#             */
-/*   Updated: 2024/04/22 12:37:56 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/26 22:55:46 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,54 @@
 #include <assert.h>
 #include "libft.h"
 
-void	test_ft_toupper(int c)
+void	test_toupper_alpha(void)
 {
-	printf("case: \"%c\" -> %d\n", (char)c, toupper(c));
-	printf("  ft_toupper: %d\n", ft_toupper(c));
-	assert(ft_toupper(c) == toupper(c));
+	int	c;
+
+	c = 'a';
+	while (c <= 'z')
+	{
+		assert(ft_toupper(c) == toupper(c));
+		++c;
+	}
+	printf("test_toupper_alpha passed.\n");
+}
+
+void	test_toupper_non_alpha(void)
+{
+	int	c;
+
+	c = 0;
+	while (c < 128)
+	{
+		if (c >= 'a' && c <= 'z')
+			;
+		else
+			assert(ft_toupper(c) == toupper(c));
+		++c;
+	}
+	printf("test_toupper_non_alpha passed.\n");
+}
+
+void	test_toupper_extended_ascii(void)
+{
+	int	c;
+
+	c = 128;
+	while (c < 256)
+	{
+		assert(ft_toupper(c) == toupper(c));
+		++c;
+	}
+	printf("test_toupper_extended_ascii passed.\n");
 }
 
 int	main(void)
 {
-	int	start;
-	int	end;
+	test_toupper_alpha();
+	test_toupper_non_alpha();
+	test_toupper_extended_ascii();
 
-	start = -1;
-	end = 255;
-	while (start <= end)
-	{
-		test_ft_toupper(start);
-		++start;
-	}
+	printf("ft_toupper passed.\n");
+	return (0);
 }
