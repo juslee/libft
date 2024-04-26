@@ -36,6 +36,7 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_atoi
 - [x] ft_calloc
 ### Additional functions not from libc library
+#### String manipulation functions
 - [ ] ft_substr
 - [ ] ft_strjoin
 - [ ] ft_strtrim
@@ -43,11 +44,15 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [ ] ft_itoa
 - [ ] ft_strmapi
 - [ ] ft_striteri
-- [ ] ft_putchar_fd
-- [ ] ft_putstr_fd
-- [ ] ft_putendl_fd
-- [ ] ft_putnbr_fd
+#### Functions from <unistd.h> library
+##### File manipulation functions
+- [x] ft_putchar_fd
+- [x] ft_putstr_fd
+- [x] ft_putendl_fd
+- [x] ft_putnbr_fd
 ### Bonus functions
+#### Functions from <list.h> library
+##### Linked list functions
 - [ ] ft_lstnew
 - [ ] ft_lstadd_front
 - [ ] ft_lstsize

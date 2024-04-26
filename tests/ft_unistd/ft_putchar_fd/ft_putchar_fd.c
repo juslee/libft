@@ -1,19 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 23:51:53 by welee            ###   ########.fr       */
+/*   Created: 2024/04/26 23:27:24 by welee             #+#    #+#             */
+/*   Updated: 2024/04/26 23:36:10 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "ft_ctype.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_unistd.h"
-#endif
+#include <stdio.h>
+#include <assert.h>
+#include "libft.h"
+
+void	test_putchar_fd(void)
+{
+	int	fd;
+	int	c;
+
+	fd = 1;
+	c = 0;
+	while (c < 128)
+	{
+		ft_putchar_fd(c, fd);
+		++c;
+	}
+	printf("test_putchar_fd passed.\n");
+}
+
+int	main(void)
+{
+	test_putchar_fd();
+
+	printf("ft_putchar_fd passed.\n");
+	return (0);
+}

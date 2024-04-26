@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 23:51:53 by welee            ###   ########.fr       */
+/*   Created: 2024/04/26 23:32:37 by welee             #+#    #+#             */
+/*   Updated: 2024/04/26 23:37:55 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "ft_ctype.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_unistd.h"
-#endif
+#include "libft.h"
+
+/// @brief Outputs the string 's' to the given file descriptor
+/// @param s a string to output
+/// @param fd the file descriptor on which to write
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	while (*s)
+		ft_putchar_fd(*(s++), fd);
+}

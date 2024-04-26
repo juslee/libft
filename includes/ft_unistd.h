@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_unistd.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 23:51:53 by welee            ###   ########.fr       */
+/*   Created: 2024/04/26 23:24:28 by welee             #+#    #+#             */
+/*   Updated: 2024/04/26 23:51:01 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "ft_ctype.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_unistd.h"
+#ifndef FT_UNISTD_H
+# define FT_UNISTD_H
+
+// File manipulation functions
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 #endif
