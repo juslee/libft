@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:48:25 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 11:52:00 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/26 20:59:05 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,89 +15,57 @@
 #include <assert.h>
 #include "libft.h"
 
-void	printdiv(const char c)
+void	test_strlcpy_basic(void)
 {
-	int	i;
+	char			dst[20];
+	const char		*src = "Hello, world!";
+	const size_t	result = ft_strlcpy(dst, src, sizeof(dst));
 
-	i = 0;
-	while (i < 80)
-	{
-		printf("%c", c);
-		i++;
-	}
-	printf("\n");
+	assert(strcmp(dst, src) == 0);
+	assert(result == strlen(src));
+	printf("test_strlcpy_basic passed.\n");
 }
 
-void	printchars(const char *str, int size)
+void	test_strlcpy_buffer_too_small(void)
 {
-	int	i;
-	int	null_end;
+	char			dst[6];
+	const char		*src = "Hello, world!";
+	const size_t	result = ft_strlcpy(dst, src, sizeof(dst));
 
-	i = 0;
-	null_end = size == 0;
-	printf("{");
-	while (null_end || size-- > 0)
-	{
-		if (i != 0)
-		{
-			printf(",");
-		}
-		if (str[i] == '\0')
-		{
-			printf(" '\\0'");
-			if (null_end)
-				break ;
-		}
-		else
-		{
-			printf(" '%c'", str[i]);
-		}
-		i++;
-	}
-	printf(" }\n");
+	assert(strcmp(dst, "Hello") == 0);
+	assert(result == strlen(src));
+	printf("test_strlcpy_buffer_too_small passed.\n");
 }
 
-void	test_strlcpy_case(
-	size_t	func(char *restrict dest, const char *restrict src, size_t size),
-	char *src, char *dest, size_t size, int dest_s)
+void	test_strlcpy_exact_fit(void)
 {
-	unsigned int	src_l;
+	char			dst[6];
+	const char		*src = "Hello";
+	const size_t	result = ft_strlcpy(dst, src, sizeof(dst));
 
-	printdiv('-');
-	printf("case: [%lu] \"%s\" -> \"%s\"\n", size, src, dest);
-
-	printf("  src: %p ", src);
-	printchars(src, 0);
-	printf("  dst: %p ", dest);
-	printchars(dest, dest_s);
-
-	src_l = func(dest, src, size);
-
-	printf("  dst: %p ", dest);
-	printchars(dest, dest_s);
-
-	printf("  len: %d\n", src_l);
-	assert(src_l == strlen(src));
-
-	printf("esac: [%lu] \"%s\" -> \"%s\"\n", size, src, dest);
+	assert(strcmp(dst, src) == 0);
+	assert(result == strlen(src));
+	printf("test_strlcpy_exact_fit passed.\n");
 }
 
-void	test_strlcpy(char *name,
-	size_t	func(char *restrict dest, const char *restrict src, size_t size))
+void	test_strlcpy_zero_length(void)
 {
-	char	dest1[] = ".....";
-	char	dest2[] = ".....";
-	char	dest3[] = ".....";
+	char			dst[10];
+	const char		*src = "";
+	const size_t	result = ft_strlcpy(dst, src, sizeof(dst));
 
-	printdiv('=');
-	printf("func: %s\n", name);
-	test_strlcpy_case(func, "abc", dest1, sizeof(dest1), sizeof(dest1));
-	test_strlcpy_case(func, "abcdefgh", dest2, sizeof(dest2), sizeof(dest2));
-	test_strlcpy_case(func, "abcdefgh", dest3, 0, sizeof(dest3));
+	assert(strcmp(dst, "") == 0);
+	assert(result == 0);
+	printf("test_strlcpy_zero_length passed.\n");
 }
 
 int	main(void)
 {
-	test_strlcpy("strlcpy", strlcpy);
-	test_strlcpy("ft_strlcpy", ft_strlcpy);
+	test_strlcpy_basic();
+	test_strlcpy_buffer_too_small();
+	test_strlcpy_exact_fit();
+	test_strlcpy_zero_length();
+
+	printf("All tests passed.\n");
+	return (0);
 }

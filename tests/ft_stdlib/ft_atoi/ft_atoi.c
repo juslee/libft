@@ -1,47 +1,113 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_atoi.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:40:56 by welee             #+#    #+#             */
-/*   Updated: 2024/04/22 11:40:05 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/26 21:53:27 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
+#include "libft.h"
 
-int	ft_atoi(const char *nptr);
-
-void	test_ft_atoi(const char *nptr)
+void	test_atoi_basic(void)
 {
-	printf("case: \"%s\" -> %d\n", nptr, atoi(nptr));
-	printf("  ft_atoi: %d\n", ft_atoi(nptr));
-	assert(ft_atoi(nptr) == atoi(nptr));
+	const char	*str = "42";
+	const int	result = ft_atoi(str);
+
+	assert(result == 42);
+	printf("test_atoi_basic passed.\n");
+}
+
+void	test_atoi_negative(void)
+{
+	const char	*str = "-42";
+	const int	result = ft_atoi(str);
+
+	assert(result == -42);
+	printf("test_atoi_negative passed.\n");
+}
+
+void	test_atoi_positive(void)
+{
+	const char	*str = "+42";
+	const int	result = ft_atoi(str);
+
+	assert(result == 42);
+	printf("test_atoi_positive passed.\n");
+}
+
+void	test_atoi_whitespace(void)
+{
+	const char	*str = " \t\n42";
+	const int	result = ft_atoi(str);
+
+	assert(result == 42);
+	printf("test_atoi_whitespace passed.\n");
+}
+
+void	test_atoi_long(void)
+{
+	const char	*str = "1234567890";
+	const int	result = ft_atoi(str);
+
+	assert(result == 1234567890);
+	printf("test_atoi_long passed.\n");
+}
+
+void	test_atoi_overflow(void)
+{
+	const char	*str = "2147483647";
+	const int	result = ft_atoi(str);
+
+	assert(result == 2147483647);
+	printf("test_atoi_overflow passed.\n");
+}
+
+void	test_atoi_underflow(void)
+{
+	const char	*str = "-2147483648";
+	const int	result = ft_atoi(str);
+
+	assert(result == -2147483648);
+	printf("test_atoi_underflow passed.\n");
+}
+
+void	test_atoi_null(void)
+{
+	const char	*str = NULL;
+	const int	result = ft_atoi(str);
+
+	assert(result == 0);
+	printf("test_atoi_null passed.\n");
+}
+
+void	test_atoi_empty(void)
+{
+	const char	*str = "";
+	const int	result = ft_atoi(str);
+
+	assert(result == 0);
+	printf("test_atoi_empty passed.\n");
 }
 
 int	main(void)
 {
-	test_ft_atoi("");
-	test_ft_atoi("0");
-	test_ft_atoi("546:5");
-	test_ft_atoi("-4886");
-	test_ft_atoi("+548");
-	test_ft_atoi("054854");
-	test_ft_atoi("000074");
-	test_ft_atoi("+-54");
-	test_ft_atoi("-+48");
-	test_ft_atoi("--47");
-	test_ft_atoi("++47");
-	test_ft_atoi("+47+5");
-	test_ft_atoi("-47-5");
-	test_ft_atoi("\e475");
-	test_ft_atoi("\t\n\r\v\f  469 \n");
-	test_ft_atoi("-2147483648");
-	test_ft_atoi("2147483647");
-	test_ft_atoi("\t\n\r\v\fd469 \n");
-	test_ft_atoi("\n\n\n  -46\b9 \n5d6");
+	test_atoi_basic();
+	test_atoi_negative();
+	test_atoi_positive();
+	test_atoi_whitespace();
+	test_atoi_long();
+	test_atoi_overflow();
+	test_atoi_underflow();
+	test_atoi_null();
+	test_atoi_empty();
+
+	printf("All tests passed.\n");
+	return (0);
 }

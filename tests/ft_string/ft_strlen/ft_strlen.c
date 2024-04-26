@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:49:08 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 11:30:09 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/26 21:14:47 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,69 @@
 #include <string.h>
 #include "libft.h"
 
-void	test_ft_strlen(const char *s)
+void	test_strlen_empty(void)
 {
-	printf("case: \"%s\" -> %lu\n", s, strlen(s));
-	printf("  ft_strlen: %lu\n", ft_strlen(s));
-	assert(ft_strlen(s) == strlen(s));
+	const char		*str = "";
+	const size_t	length = ft_strlen(str);
+
+	assert(length == 0);
+	printf("test_strlen_empty passed.\n");
+}
+
+void	test_strlen_basic(void)
+{
+	const char		*str = "Hello, world!";
+	const size_t	length = ft_strlen(str);
+
+	assert(length == strlen(str));
+	printf("test_strlen_basic passed.\n");
+}
+
+void	test_strlen_long(void)
+{
+	const char		*str = "This is a long string.";
+	const size_t	length = ft_strlen(str);
+
+	assert(length == strlen(str));
+	printf("test_strlen_long passed.\n");
+}
+
+void	test_strlen_whitespace(void)
+{
+	const char		*str = " \t\n";
+	const size_t	length = ft_strlen(str);
+
+	assert(length == strlen(str));
+	printf("test_strlen_whitespace passed.\n");
+}
+
+void	test_strlen_null(void)
+{
+	const char		*str = NULL;
+	const size_t	length = ft_strlen(str);
+
+	assert(length == 0);
+	printf("test_strlen_null passed.\n");
+}
+
+void	test_strlen_null_byte(void)
+{
+	const char		*str = "Hello, world!\0w";
+	const size_t	length = ft_strlen(str);
+
+	assert(length == 13);
+	printf("test_strlen_null_byte passed.\n");
 }
 
 int	main(void)
 {
-	test_ft_strlen("");
-	test_ft_strlen("Hello, world!");
-	test_ft_strlen("1234567890");
-	test_ft_strlen("abcdefghijklmnopqrstuvwxyz");
-	test_ft_strlen("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-	test_ft_strlen(
-		"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
-	test_ft_strlen("lorem\tipsum\tdolor\nsit\namet\n");
-	test_ft_strlen("\n\n\f\r\t");
-	test_ft_strlen("   ");
+	test_strlen_empty();
+	test_strlen_basic();
+	test_strlen_long();
+	test_strlen_whitespace();
+	test_strlen_null();
+	test_strlen_null_byte();
+
+	printf("All tests passed.\n");
+	return (0);
 }

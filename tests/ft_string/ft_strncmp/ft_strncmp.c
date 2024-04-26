@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:58:52 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 12:00:04 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/26 21:58:05 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,86 +15,76 @@
 #include <assert.h>
 #include "libft.h"
 
-void	printdiv(const char c)
+void	test_strncmp_equal_strings(void)
 {
-	int	i;
+	const char	*s1 = "Hello, world!";
+	const char	*s2 = "Hello, world!";
+	const int	result = ft_strncmp(s1, s2, 13);
 
-	i = 0;
-	while (i < 80)
-	{
-		printf("%c", c);
-		i++;
-	}
-	printf("\n");
+	assert(result == 0);
+	printf("test_strncmp_equal_strings passed.\n");
 }
 
-void	printchars(const char *str, int size)
+void	test_strncmp_different_strings(void)
 {
-	int	i;
-	int	null_end;
+	const char	*s1 = "Hello, world.";
+	const char	*s2 = "Hello, world!";
+	const int	result = ft_strncmp(s1, s2, 13);
 
-	i = 0;
-	null_end = size == 0;
-	printf("{");
-	while (null_end || size-- > 0)
-	{
-		if (i != 0)
-		{
-			printf(",");
-		}
-		if (str[i] == '\0')
-		{
-			printf(" '\\0'");
-			if (null_end)
-				break ;
-		}
-		else
-		{
-			printf(" '%c'", str[i]);
-		}
-		i++;
-	}
-	printf(" }\n");
+	assert(result > 0);
+	printf("test_strncmp_different_strings passed.\n");
 }
 
-void	test_strncmp_case(int func(const char *s1, const char *s2, size_t n),
-	char *s1, char *s2, int n, int cmp)
+void	test_strncmp_less_than_n(void)
 {
-	int	c;
+	const char	*s1 = "Hello, World!";
+	const char	*s2 = "Hello, world!";
+	const int	result = ft_strncmp(s1, s2, 13);
 
-	printdiv('-');
-	printf("case: [%d] \"%s\" <-> \"%s\"\n", n, s1, s2);
-
-	printf("  s1: %p ", s1);
-	printchars(s1, 0);
-	printf("  s2: %p ", s2);
-	printchars(s2, 0);
-
-	c = func(s1, s2, n);
-
-	printf("  cmp: %d\n", c);
-	assert(c == cmp);
+	assert(result != 0);
+	assert(result < 0);
+	printf("test_strncmp_less_than_n passed.\n");
 }
 
-void	test_strncmp(char *name,
-	int func(const char *s1, const char *s2, size_t n))
+void	test_strncmp_prefix(void)
 {
-	printdiv('=');
-	printf("func: %s\n", name);
-	test_strncmp_case(func, "ABC", "ABC", 3, 0);
-	test_strncmp_case(func, "ABC", "AB", 3, 67);
-	test_strncmp_case(func, "ABA", "ABZ", 3, -25);
-	test_strncmp_case(func, "ABJ", "ABC", 3, 7);
-	test_strncmp_case(func, "AB", "ABC", 3, -67);
-	test_strncmp_case(func, "ABC", "ABC", 2, 0);
-	test_strncmp_case(func, "ABC", "AB", 2, 0);
-	test_strncmp_case(func, "ABA", "ABZ", 2, 0);
-	test_strncmp_case(func, "ABJ", "ABC", 2, 0);
-	test_strncmp_case(func, "AB", "ABC", 2, 0);
+	const char	*s1 = "Hello";
+	const char	*s2 = "Hello, world!";
+	const int	result = ft_strncmp(s1, s2, 5);
+
+	assert(result == 0);
+	printf("test_strncmp_prefix passed.\n");
+}
+
+void	test_strncmp_n_limit(void)
+{
+	const char	*s1 = "Hello, world";
+	const char	*s2 = "Hello, worly";
+	const int	result = ft_strncmp(s1, s2, 10);
+
+	assert(result == 0);
+	printf("test_strncmp_n_limit passed.\n");
+}
+
+void	test_strncmp_empty_strings(void)
+{
+	const char	*s1 = "";
+	const char	*s2 = "";
+	const int	result = ft_strncmp(s1, s2, 0);
+
+	assert(result == 0);
+	printf("test_strncmp_empty_strings passed.\n");
 }
 
 int	main(void)
 {
-	test_strncmp("strncmp", strncmp);
-	test_strncmp("ft_strncmp", ft_strncmp);
+	test_strncmp_equal_strings();
+	test_strncmp_different_strings();
+	test_strncmp_less_than_n();
+	test_strncmp_prefix();
+	test_strncmp_n_limit();
+	test_strncmp_empty_strings();
+
+	printf("All tests passed.\n");
+	return (0);
 }

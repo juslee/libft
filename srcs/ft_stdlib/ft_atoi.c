@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:25:09 by welee             #+#    #+#             */
-/*   Updated: 2024/04/18 14:07:26 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/26 21:53:09 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_atoi(const char *nptr)
 	int	sign;
 	int	result;
 
+	if (!nptr)
+		return (0);
 	sign = 1;
 	result = 0;
 	while (ft_isspace(*nptr))

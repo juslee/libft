@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:34:19 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 11:43:39 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/26 20:49:51 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,98 +15,57 @@
 #include <assert.h>
 #include "libft.h"
 
-void	printdiv(const char c)
+void	test_strlcat_basic(void)
 {
-	int	i;
+	char			dst[20] = "Hello";
+	const char		*src = ", world!";
+	const size_t	result = ft_strlcat(dst, src, sizeof(dst));
 
-	i = 0;
-	while (i < 80)
-	{
-		printf("%c", c);
-		i++;
-	}
-	printf("\n");
+	assert(strcmp(dst, "Hello, world!") == 0);
+	assert(result == strlen("Hello, world!"));
+	printf("test_strlcat_basic passed.\n");
 }
 
-void	printchars(const char *str, int size)
+void	test_strlcat_buffer_too_small(void)
 {
-	int	i;
-	int	null_end;
+	char			dst[11] = "Hello";
+	const char		*src = ", world!";
+	const size_t	result = ft_strlcat(dst, src, sizeof(dst));
 
-	i = 0;
-	null_end = size == 0;
-	printf("{");
-	while (null_end || size-- > 0)
-	{
-		if (i != 0)
-		{
-			printf(",");
-		}
-		if (str[i] == '\0')
-		{
-			printf(" '\\0'");
-			if (null_end)
-				break ;
-		}
-		else
-		{
-			printf(" '%c'", str[i]);
-		}
-		i++;
-	}
-	printf(" }\n");
+	assert(strcmp(dst, "Hello, wor") == 0);
+	assert(result == strlen("Hello") + strlen(src));
+	printf("test_strlcat_buffer_too_small passed.\n");
 }
 
-void	test_func_case(size_t	func(char *dest, const char *src, size_t n),
-	char *dest, const char *src, size_t n, char *str, int len)
+void	test_strlcat_exact_fit(void)
 {
-	int	l;
+	char			dst[12] = "Hello";
+	const char		*src = ", world!";
+	const size_t	result = ft_strlcat(dst, src, sizeof(dst));
 
-	printdiv('-');
-	printf("case: \"%s\" (%lu) + \"%s\" = \"%s\" (%d)\n",
-		dest, n, src, str, len);
-
-	printf("  src: %p ", src);
-	printchars((char *)src, 0);
-	printf("  dst: %p ", dest);
-	printchars(dest, 0);
-
-	l = func(dest, src, n);
-
-	printf("  dst: %p ", dest);
-	printchars(dest, 0);
-
-	printf("  len: %d\n", l);
-	assert(l == len);
-
-	assert(strcmp(dest, str) == 0);
+	assert(strcmp(dst, "Hello, worl") == 0);
+	assert(result == 13);
+	printf("test_strlcat_exact_fit passed.\n");
 }
 
-void	test_func(char *name,
-	size_t	func(char *dest, const char *src, size_t n))
+void	test_strlcat_zero_length(void)
 {
-	char	*src = "world";
-	char	dest1[11] = "hello";
-	char	dest2[11] = "hello";
-	char	dest3[11] = "hello";
-	char	dest4[11] = "hello";
-	char	dest5[11] = "hello";
-	char	dest6[11] = "hello";
-	char	dest7[11] = "hello";
+	char			dst[10] = "Hello";
+	const char		*src = "";
+	const size_t	result = strlcat(dst, src, sizeof(dst));
 
-	printdiv('=');
-	printf("func: %s\n", name);
-	test_func_case(func, dest1, src, 11, "helloworld", 10);
-	test_func_case(func, dest2, src, 10, "helloworl", 10);
-	test_func_case(func, dest3, src, 12, "helloworld", 10);
-	test_func_case(func, dest4, src, 0, "hello", 5);
-	test_func_case(func, dest5, src, 4, "hello", 9);
-	test_func_case(func, dest6, src, 5, "hello", 10);
-	test_func_case(func, dest7, src, 6, "hello", 10);
+	assert(strcmp(dst, "Hello") == 0);
+	assert(result == strlen("Hello"));
+	printf("test_strlcat_zero_length passed.\n");
 }
 
 int	main(void)
 {
-	test_func("strlcat", strlcat);
-	test_func("ft_strlcat", ft_strlcat);
+	test_strlcat_basic();
+	test_strlcat_buffer_too_small();
+	test_strlcat_exact_fit();
+	test_strlcat_zero_length();
+
+	printf("All tests passed.\n");
+	return (0);
 }

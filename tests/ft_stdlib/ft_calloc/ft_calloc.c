@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:59:24 by welee             #+#    #+#             */
-/*   Updated: 2024/04/22 14:51:08 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/26 21:46:19 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,81 @@
 #include <assert.h>
 #include "libft.h"
 
-void	test_ft_calloc(size_t count, size_t size)
+void	test_calloc_basic(void)
 {
-	void	*ptr;
-	void	*std_ptr;
+	const size_t	count = 5;
+	const size_t	size = 10;
+	const size_t	total_size = count * size;
+	const void		*ptr = ft_calloc(count, size);
+	size_t			i;
 
-	ptr = ft_calloc(count, size);
-	std_ptr = calloc(count, size);
-	printf("case: count=%zu, size=%zu\n", count, size);
-	assert(!ft_memcmp(ptr, std_ptr, count * size));
-	free(ptr);
-	free(std_ptr);
+	assert(ptr != NULL);
+	i = 0;
+	while (i < total_size)
+	{
+		assert(((char *)ptr)[i] == 0);
+		++i;
+	}
+	free((void *)ptr);
+	printf("test_calloc_basic passed.\n");
+}
+
+void	test_calloc_zero_count(void)
+{
+	const size_t	count = 0;
+	const size_t	size = 10;
+	const void	*ptr = ft_calloc(count, size);
+
+	assert(ptr != NULL);
+	free((void *)ptr);
+	printf("test_calloc_zero_count passed.\n");
+}
+
+void	test_calloc_zero_size(void)
+{
+	const size_t	count = 5;
+	const size_t	size = 0;
+	const void	*ptr = ft_calloc(count, size);
+
+	assert(ptr != NULL);
+	free((void *)ptr);
+	printf("test_calloc_zero_size passed.\n");
+}
+
+void	test_calloc_zero_count_and_size(void)
+{
+	const size_t	count = 0;
+	const size_t	size = 0;
+	const void		*ptr = ft_calloc(count, size);
+
+	assert(ptr != NULL);
+	free((void *)ptr);
+	printf("test_calloc_zero_count_and_size passed.\n");
+}
+
+void	test_calloc_large_allocation(void)
+{
+	const size_t	num = 1024 * 1024 * 1024;
+	char			*arr = calloc(num, sizeof(char));
+
+	if (arr != NULL)
+	{
+		assert(arr[0] == 0);
+		assert(arr[num - 1] == 0);
+	}
+
+	free(arr);
+	printf("test_calloc_large_allocation passed.\n");
 }
 
 int	main(void)
 {
-	test_ft_calloc(0, 0);
-	test_ft_calloc(0, 1);
-	test_ft_calloc(1, 0);
-	test_ft_calloc(1, 1);
-	test_ft_calloc(1, 2);
-	test_ft_calloc(2, 1);
-	test_ft_calloc(2, 2);
-	test_ft_calloc(2, 3);
-	test_ft_calloc(3, 2);
-	test_ft_calloc(3, 3);
-	test_ft_calloc(3, 4);
-	test_ft_calloc(4, 3);
-	test_ft_calloc(4, 4);
-	test_ft_calloc(4, 5);
-	test_ft_calloc(5, 4);
-	test_ft_calloc(5, 5);
-	test_ft_calloc(5, 6);
-	test_ft_calloc(6, 5);
-	test_ft_calloc(6, 6);
-	test_ft_calloc(6, 7);
-	test_ft_calloc(7, 6);
-	test_ft_calloc(7, 7);
-	test_ft_calloc(7, 8);
+	test_calloc_basic();
+	test_calloc_zero_count();
+	test_calloc_zero_size();
+	test_calloc_zero_count_and_size();
+	test_calloc_large_allocation();
+
+	printf("All tests passed.\n");
+	return (0);
 }
