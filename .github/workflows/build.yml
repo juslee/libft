@@ -21,3 +21,12 @@ jobs:
       uses: actions/checkout@main
     - name: build application
       run: make all
+    - name: run tests
+      run: make test
+  dist:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@main
+    - name: distribution
+      run: make dist

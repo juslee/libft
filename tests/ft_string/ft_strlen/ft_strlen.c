@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_strlen.c                                   :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:49:08 by welee             #+#    #+#             */
-/*   Updated: 2024/04/22 12:00:14 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/26 11:30:09 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 void	test_ft_strlen(const char *s)
 {
