@@ -36,7 +36,8 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_atoi
 - [x] ft_calloc
 ### Additional functions not from libc library
-#### String manipulation functions
+#### Functions from <string.h> library
+##### String manipulation functions
 - [ ] ft_substr
 - [ ] ft_strjoin
 - [ ] ft_strtrim
