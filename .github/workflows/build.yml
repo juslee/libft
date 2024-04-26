@@ -22,7 +22,7 @@ jobs:
     - name: build application
       run: make all
     - name: run tests
-      run: make test
+      run: make tests
   dist:
     runs-on: ubuntu-latest
     steps:
