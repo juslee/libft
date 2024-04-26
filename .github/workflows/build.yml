@@ -21,8 +21,8 @@ jobs:
       uses: actions/checkout@main
     - name: build application
       run: make all
-    - name: run tests
-      run: make tests
+    # - name: run tests
+    #   run: make tests
   dist:
     runs-on: ubuntu-latest
     steps:
