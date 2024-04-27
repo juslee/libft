@@ -38,7 +38,7 @@ It will contain a lot of general purpose functions your programs will rely upon.
 ### Additional functions not from libc library
 #### Functions from <string.h> library
 ##### String manipulation functions
-- [ ] ft_substr
+- [x] ft_substr
 - [ ] ft_strjoin
 - [ ] ft_strtrim
 - [ ] ft_split
