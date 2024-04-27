@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/26 22:03:46 by welee            ###   ########.fr        #
+#    Updated: 2024/04/27 11:36:57 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,4 +86,4 @@ dist: $(COMBINED_HEADER)
 tests: all
 	$(MAKE) $(TEST_DIR) all
 
-.PHONY: all clean fclean re norm dist test
+.PHONY: all clean fclean re norm dist tests
