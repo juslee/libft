@@ -44,6 +44,7 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_strjoin
 - [x] ft_strtrim
 - [x] ft_split
+##### String transformation functions
 - [x] ft_strmapi
 - [x] ft_striteri
 #### Functions from <unistd.h> library
@@ -55,18 +56,19 @@ It will contain a lot of general purpose functions your programs will rely upon.
 ### Bonus functions
 #### Functions from <list.h> library
 ##### Linked list functions
-- [ ] ft_lstnew
-- [ ] ft_lstadd_front
-- [ ] ft_lstsize
-- [ ] ft_lstlast
-- [ ] ft_lstadd_back
-- [ ] ft_lstdelone
-- [ ] ft_lstclear
-- [ ] ft_lstiter
-- [ ] ft_lstmap
+- [x] ft_lstnew
+- [x] ft_lstadd_front
+- [x] ft_lstsize
+- [x] ft_lstlast
+- [x] ft_lstadd_back
+- [x] ft_lstdelone
+- [x] ft_lstclear
+- [x] ft_lstiter
+- [x] ft_lstmap
 ### Other functions (not mandatory)
 #### Functions from <queue.h> library
 ##### Queue functions
+- [ ] ft_queue_new
 - [ ] ft_queue_enqueue
 - [ ] ft_queue_dequeue
 - [ ] ft_queue_front
@@ -75,6 +77,7 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [ ] ft_queue_clear
 #### Functions from <stack.h> library
 ##### Stack functions
+- [ ] ft_stack_new
 - [ ] ft_stack_push
 - [ ] ft_stack_pop
 - [ ] ft_stack_top
