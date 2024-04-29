@@ -6,13 +6,12 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:31:26 by welee             #+#    #+#             */
-/*   Updated: 2024/04/27 11:32:05 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/30 00:40:27 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
-# include <stddef.h>
 
 typedef struct s_list
 {
