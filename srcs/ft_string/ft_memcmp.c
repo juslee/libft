@@ -6,18 +6,25 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:28:00 by welee             #+#    #+#             */
-/*   Updated: 2024/04/22 13:40:57 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 14:25:13 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_memcmp.c
+ * @brief Compare two memory areas.
+ */
+
 #include <stddef.h>
 
-/// @brief Compare two memory areas
-/// @param s1 first memory area
-/// @param s2 second memory area
-/// @param n number of bytes to compare
-/// @return 0 if the two memory areas are identical, otherwise the difference
-/// between the first two differing bytes
+/**
+ * @brief Compare two memory areas.
+ * @param s1 First memory area.
+ * @param s2 Second memory area.
+ * @param n Number of bytes to compare.
+ * @return 0 if the two memory areas are identical, otherwise the difference
+ * between the first two differing bytes.
+ */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*src1;

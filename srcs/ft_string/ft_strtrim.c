@@ -6,16 +6,23 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 13:27:07 by welee             #+#    #+#             */
-/*   Updated: 2024/04/27 13:54:15 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 14:38:49 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_strtrim.c
+ * @brief Trim the string with the given set of characters
+ */
+
 #include "libft.h"
 
-/// @brief Trim the string with the given set of characters
-/// @param s1 The string to be trimmed
-/// @param s2 The set of characters to be trimmed
-/// @return The trimmed string
+/**
+ * @brief Trim the string with the given set of characters
+ * @param s1 The string to be trimmed
+ * @param s2 The set of characters to be trimmed
+ * @return The trimmed string
+ */
 char	*ft_strtrim(char const *s1, char const *s2)
 {
 	size_t	start;

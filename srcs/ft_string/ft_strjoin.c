@@ -6,18 +6,25 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 13:08:11 by welee             #+#    #+#             */
-/*   Updated: 2024/04/27 13:56:19 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 14:34:06 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strjoin.c
+ * @brief Concatenate two strings.
+ */
 
 #include <stddef.h>
 #include <stdlib.h>
 #include "libft.h"
 
-/// @brief Concatenate two strings
-/// @param s1 first string
-/// @param s2 second string
-/// @return The concatenated string
+/**
+ * @brief Concatenate two strings.
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @return The concatenated string.
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;

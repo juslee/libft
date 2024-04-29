@@ -6,19 +6,26 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:06:07 by welee             #+#    #+#             */
-/*   Updated: 2024/04/18 13:23:11 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 14:37:25 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strnstr.c
+ * @brief Locate a substring in a string
+ */
 
 #include <stddef.h>
 #include "libft.h"
 
-/// @brief Locate a substring in a string
-/// @param big The string to search in
-/// @param little The string to search for
-/// @param len The maximum number of characters to search
-/// @return A pointer to the first occurrence of the substring, or NULL if the
-/// substring is not found
+/**
+ * @brief Locate a substring in a string
+ * @param big The string to search in
+ * @param little The string to search for
+ * @param len The maximum number of characters to search
+ * @return A pointer to the first occurrence of little in big,
+ * or NULL if not found
+ */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	little_len;

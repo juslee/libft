@@ -6,17 +6,24 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:13:44 by welee             #+#    #+#             */
-/*   Updated: 2024/04/22 13:15:18 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 14:27:17 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_memmove.c
+ * @brief Copy memory area.
+ */
+
 #include <stddef.h>
 
-/// @brief Copy memory area
-/// @param dst destination
-/// @param src source
-/// @param len number of bytes to copy
-/// @return destination
+/**
+ * @brief Copy memory area.
+ * @param dst The destination.
+ * @param src The source.
+ * @param len The number of bytes to copy.
+ * @return The destination.
+ */
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*dst_ptr;

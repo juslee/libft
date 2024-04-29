@@ -6,15 +6,22 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 17:13:44 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 21:13:56 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 14:35:23 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_strlen.c
+ * @brief Calculate the length of a string
+ */
+
 #include <stddef.h>
 
-/// @brief Calculate the length of a string
-/// @param s The string to calculate the length
-/// @return The length of the string
+/**
+ * @brief Calculate the length of a string
+ * @param s The string to calculate the length
+ * @return The length of the string
+ */
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;

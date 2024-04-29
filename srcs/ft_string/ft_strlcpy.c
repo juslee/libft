@@ -6,18 +6,25 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:40:21 by welee             #+#    #+#             */
-/*   Updated: 2024/04/16 16:53:15 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 14:35:07 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strlcpy.c
+ * @brief Copy string to a fixed size buffer
+ */
 
 #include "libft.h"
 #include <stddef.h>
 
-/// @brief Copy string to a fixed size buffer
-/// @param dst The destination buffer
-/// @param src The source string
-/// @param dstsize The size of the destination buffer
-/// @return The length of the source string
+/**
+ * @brief Copy string to a fixed size buffer
+ * @param dst The destination buffer
+ * @param src The source string
+ * @param dstsize The size of the destination buffer
+ * @return The length of the source string
+ */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	src_len;

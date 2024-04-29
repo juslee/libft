@@ -6,18 +6,24 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:05:11 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 20:50:38 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 14:34:46 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_strlcat.c
+ * @brief Concatenate strings
+ */
 #include "libft.h"
 
-/// @brief Concatenate strings
-/// @param dst destination buffer
-/// @param src source string
-/// @param dstsize size of the destination buffer
-/// @return the length of the source string + the length of the destination
-/// string
+/**
+ * @brief Concatenate strings
+ * @param dst destination buffer
+ * @param src source string
+ * @param dstsize size of the destination buffer
+ * @return the length of the source string + the length of the destination
+ * string
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	src_len;

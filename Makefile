@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/27 11:36:57 by welee            ###   ########.fr        #
+#    Updated: 2024/04/29 14:58:46 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ INCLUDES_DIR = includes
 TEST_DIR = tests
 DIST_DIR = dist
 BIN_DIR = bin
+DOCS_DIR = docs
 
 INCLUDES = -I ${INCLUDES_DIR}
 CC = cc
@@ -86,4 +87,7 @@ dist: $(COMBINED_HEADER)
 tests: all
 	$(MAKE) $(TEST_DIR) all
 
-.PHONY: all clean fclean re norm dist tests
+docs:
+	doxygen Doxyfile
+
+.PHONY: all clean fclean re norm dist tests docs

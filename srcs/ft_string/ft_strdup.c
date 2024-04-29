@@ -6,16 +6,23 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:32:43 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 18:05:27 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 14:33:37 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strdup.c
+ * @brief Duplicate a string.
+ */
 
 #include <stdlib.h>
 #include "libft.h"
 
-/// @brief Duplicate a string
-/// @param s The string to duplicate
-/// @return The duplicated string
+/**
+ * @brief Duplicate a string.
+ * @param s The string to duplicate.
+ * @return The duplicated string.
+ */
 char	*ft_strdup(const char *s)
 {
 	char	*dup;
