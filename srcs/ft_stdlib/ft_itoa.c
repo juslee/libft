@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:05:10 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 15:53:36 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 15:55:30 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static int	ft_count_digits(int n)
 
 	if (n == 0)
 		return (1);
-
 	len = 0;
 	if (n < 0)
 		len++;
