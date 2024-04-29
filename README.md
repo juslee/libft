@@ -15,6 +15,9 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_islower **(optional)**
 - [x] ft_isupper **(optional)**
 - [x] ft_isspace **(optional)**
+#### Functions from <stdlib.h> library
+- [x] ft_atoi
+- [x] ft_calloc
 #### Functions from <string.h> library
 ##### String manipulation functions
 - [x] ft_strlen
@@ -32,17 +35,15 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_memmove
 - [x] ft_memchr
 - [x] ft_memcmp
-#### Functions from <stdlib.h> library
-- [x] ft_atoi
-- [x] ft_calloc
 ### Additional functions not from libc library
+#### Functions from <stdlib.h> library
+- [x] ft_itoa
 #### Functions from <string.h> library
 ##### String manipulation functions
 - [x] ft_substr
 - [x] ft_strjoin
 - [x] ft_strtrim
-- [ ] ft_split
-- [ ] ft_itoa
+- [x] ft_split
 - [ ] ft_strmapi
 - [ ] ft_striteri
 #### Functions from <unistd.h> library

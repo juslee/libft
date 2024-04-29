@@ -6,19 +6,21 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 23:37:08 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 14:40:28 by welee            ###   ########.fr       */
+/*   Updated: 2024/04/29 15:12:00 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
  * @file ft_putendl_fd.c
- * @brief Outputs the string 's' to the given file descriptor, followed by a newline
+ * @brief Outputs the string 's' to the given file descriptor, followed by a
+ * newline
  */
 
 #include "libft.h"
 
 /**
- * @brief Outputs the string 's' to the given file descriptor, followed by a newline
+ * @brief Outputs the string 's' to the given file descriptor, followed by a
+ * newline
  * @param s a string to output
  * @param fd the file descriptor on which to write
  */
