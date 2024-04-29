@@ -44,8 +44,8 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_strjoin
 - [x] ft_strtrim
 - [x] ft_split
-- [ ] ft_strmapi
-- [ ] ft_striteri
+- [x] ft_strmapi
+- [x] ft_striteri
 #### Functions from <unistd.h> library
 ##### File manipulation functions
 - [x] ft_putchar_fd
