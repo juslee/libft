@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/04/29 14:58:46 by welee            ###   ########.fr        #
+#    Updated: 2024/05/02 13:15:28 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,9 @@ COMBINED_HEADER = $(DIST_DIR)/libft.h
 
 NORM = norminette
 NORM_FLAGS = -R CheckForbiddenSourceHeader -R CheckDefine
+
+DOXYGEN = doxygen
+DOXYGEN_CONFIG = Doxyfile
 
 all: ${NAME}
 
@@ -76,6 +79,7 @@ $(COMBINED_HEADER): $(HEADERS)
 	@echo "#ifndef LIBFT_H" >> $@
 	@echo "# define LIBFT_H" >> $@
 	@echo "# include <stddef.h>" >> $@
+	@echo "# include <sys/types.h>" >> $@
 	@$(foreach hdr,$(HEADERS),cat $(hdr) | sed -e '1,/^#ifndef FT_.*_H/d' -e '/^#endif/d' -e '/^# define FT_.*_H/d' | sed '/^# include */d' >> $@;)
 	@echo "#endif" >> $@
 
@@ -88,6 +92,6 @@ tests: all
 	$(MAKE) $(TEST_DIR) all
 
 docs:
-	doxygen Doxyfile
+	${DOXYGEN} ${DOXYGEN_CONFIG}
 
 .PHONY: all clean fclean re norm dist tests docs

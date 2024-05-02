@@ -12,9 +12,6 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_isprint
 - [x] ft_toupper
 - [x] ft_tolower
-- [x] ft_islower **(optional)**
-- [x] ft_isupper **(optional)**
-- [x] ft_isspace **(optional)**
 #### Functions from <stdlib.h> library
 - [x] ft_atoi
 - [x] ft_calloc
@@ -66,15 +63,42 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_lstiter
 - [x] ft_lstmap
 ### Other functions (not mandatory)
+#### Functions from <ctype.h> library
+- [x] ft_islower
+- [x] ft_isupper
+- [x] ft_isspace
+- [ ] ft_isblank
+- [ ] ft_iscntrl
+- [ ] ft_isgraph
+- [ ] ft_ispunct
+#### Functions from <string.h> library
+##### String manipulation functions
+- [ ] ft_strcpy
+- [ ] ft_strncpy
+- [ ] ft_strcat
+- [ ] ft_strncat
+- [ ] ft_strstr
+- [ ] ft_strcmp
+##### Memory manipulation functions
+- [ ] ft_memccpy
+#### Functions from <stdlib.h> library
+- [ ] ft_strtol
+- [ ] ft_strtoul
+- [ ] ft_strtoll
+- [ ] ft_strtoull
+- [ ] ft_strtof
+- [ ] ft_strtod
+- [ ] ft_strtold
+- [ ] ft_strtoumax
+- [ ] ft_strtoimax
 #### Functions from <queue.h> library
 ##### Queue functions
-- [ ] ft_queue_new
-- [ ] ft_queue_enqueue
-- [ ] ft_queue_dequeue
-- [ ] ft_queue_front
-- [ ] ft_queue_size
-- [ ] ft_queue_is_empty
-- [ ] ft_queue_clear
+- [x] ft_queue_new
+- [x] ft_queue_enqueue
+- [x] ft_queue_dequeue
+- [x] ft_queue_is_full
+- [x] ft_queue_is_empty
+- [x] ft_queue_clear
 #### Functions from <stack.h> library
 ##### Stack functions
 - [ ] ft_stack_new
