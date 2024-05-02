@@ -67,10 +67,11 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_islower
 - [x] ft_isupper
 - [x] ft_isspace
-- [ ] ft_isblank
-- [ ] ft_iscntrl
-- [ ] ft_isgraph
-- [ ] ft_ispunct
+- [x] ft_isblank
+- [x] ft_iscntrl
+- [x] ft_isgraph
+- [x] ft_ispunct
+- [x] ft_isxdigit
 #### Functions from <string.h> library
 ##### String manipulation functions
 - [ ] ft_strcpy
