@@ -15,7 +15,7 @@ jobs:
     - name: norminette
       uses: alexandregv/norminette-action@v3
       with:
-        flags: 'srcs includes'
+        flags: '-R CheckForbiddenSourceHeader -R CheckDefine srcs includes'
   build:
     runs-on: ubuntu-latest
     steps:
