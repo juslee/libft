@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/03 16:04:12 by welee            ###   ########.fr        #
+#    Updated: 2024/05/07 12:12:28 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,9 @@ dist: $(COMBINED_HEADER)
 	@find $(SRCS_DIR) -type f -exec cp {} $(DIST_DIR) \;
 	@cp -f $(PUBLIC_DIR)/* $(DIST_DIR)
 	$(MAKE) $(DIST_DIR) all
+
+disttests: dist
+	../Libftest/grademe.sh
 
 tests: all
 	$(MAKE) $(TEST_DIR) all

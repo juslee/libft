@@ -80,18 +80,12 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_strncat
 - [x] ft_strstr
 - [x] ft_strcmp
-##### Memory manipulation functions
-- [x] ft_memccpy
-#### Functions from <stdlib.h> library
-- [ ] ft_strtol
-- [ ] ft_strtoul
-- [ ] ft_strtoll
-- [ ] ft_strtoull
-- [ ] ft_strtof
-- [ ] ft_strtod
-- [ ] ft_strtold
-- [ ] ft_strtoumax
-- [ ] ft_strtoimax
+#### Functions from <unistd.h> library
+##### Standard I/O functions
+- [x] ft_putchar_fd
+- [x] ft_putstr_fd
+- [x] ft_putendl_fd
+- [x] ft_putnbr_fd
 #### Functions from <queue.h> library
 ##### Queue functions
 - [x] ft_queue_new

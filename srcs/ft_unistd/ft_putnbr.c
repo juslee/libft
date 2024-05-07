@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ispunct.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 15:10:48 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 13:10:30 by welee            ###   ########.fr       */
+/*   Created: 2024/05/07 13:07:31 by welee             #+#    #+#             */
+/*   Updated: 2024/05/07 13:08:03 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_ispunct.c
- * @brief Check if the character is a punctuation character.
+ * @file ft_putnbr.c
+ * @brief print an integer
  */
 
+#include "libft.h"
+
 /**
- * @brief Check if the character is a punctuation character.
- * @param c The character to check.
- * @return Nonzero if the character c is a punctuation character and zero if
- * not.
+ * @brief print an integer
+ * @param n integer to be printed
  */
-int	ft_ispunct(int c)
+void	ft_putnbr(int n)
 {
-	return ((c >= 33 && c <= 47)
-		|| (c >= 58 && c <= 64)
-		|| (c >= 91 && c <= 96)
-		|| (c >= 123 && c <= 126));
+	if (n == -2147483648)
+	{
+		ft_putstr("-2147483648");
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n > 9)
+	{
+		ft_putnbr(n / 10);
+	}
+	ft_putchar(n % 10 + '0');
 }

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ispunct.c                                       :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 15:10:48 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 13:10:30 by welee            ###   ########.fr       */
+/*   Created: 2024/05/07 13:06:02 by welee             #+#    #+#             */
+/*   Updated: 2024/05/07 13:07:00 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_ispunct.c
- * @brief Check if the character is a punctuation character.
+ * @file ft_putendl.c
+ * @brief print a string followed by a newline
  */
 
+#include "libft.h"
+
 /**
- * @brief Check if the character is a punctuation character.
- * @param c The character to check.
- * @return Nonzero if the character c is a punctuation character and zero if
- * not.
+ * @brief print a string followed by a newline
+ * @param s string to be printed
  */
-int	ft_ispunct(int c)
+void	ft_putendl(char *s)
 {
-	return ((c >= 33 && c <= 47)
-		|| (c >= 58 && c <= 64)
-		|| (c >= 91 && c <= 96)
-		|| (c >= 123 && c <= 126));
+	ft_putstr(s);
+	ft_putchar('\n');
 }
