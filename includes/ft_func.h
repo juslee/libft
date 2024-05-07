@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_func.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 15:52:12 by welee            ###   ########.fr       */
+/*   Created: 2024/05/07 15:52:18 by welee             #+#    #+#             */
+/*   Updated: 2024/05/07 16:12:35 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "ft_ctype.h"
-# include "ft_func.h"
-# include "ft_list.h"
-# include "ft_queue.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_unistd.h"
+#ifndef FT_FUNC_H
+# define FT_FUNC_H
+
+void	*ft_ternary(int condition, void *true_value, void *false_value);
+void	ft_for(int start, int end, void (*f)(int));
 #endif

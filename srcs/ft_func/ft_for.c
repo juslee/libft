@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_for.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 15:52:12 by welee            ###   ########.fr       */
+/*   Created: 2024/05/07 16:13:01 by welee             #+#    #+#             */
+/*   Updated: 2024/05/07 16:13:54 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "ft_ctype.h"
-# include "ft_func.h"
-# include "ft_list.h"
-# include "ft_queue.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_unistd.h"
-#endif
+/**
+ * @file ft_for.c
+ * @brief loop from start to end
+ */
+void	ft_for(int start, int end, void (*f)(int))
+{
+	while (start < end)
+	{
+		f(start);
+		start++;
+	}
+}

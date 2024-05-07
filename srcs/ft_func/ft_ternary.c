@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_ternary.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 15:52:12 by welee            ###   ########.fr       */
+/*   Created: 2024/05/07 15:51:41 by welee             #+#    #+#             */
+/*   Updated: 2024/05/07 16:14:02 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "ft_ctype.h"
-# include "ft_func.h"
-# include "ft_list.h"
-# include "ft_queue.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_unistd.h"
-#endif
+/**
+ * @file ft_ternary.c
+ * @brief return true_value if condition is true, else return false_value
+ */
+void	*ft_ternary(int condition, void *true_value, void *false_value)
+{
+	if (condition)
+		return (true_value);
+	else
+		return (false_value);
+}

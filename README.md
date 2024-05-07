@@ -82,10 +82,15 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_strcmp
 #### Functions from <unistd.h> library
 ##### Standard I/O functions
-- [x] ft_putchar_fd
-- [x] ft_putstr_fd
-- [x] ft_putendl_fd
-- [x] ft_putnbr_fd
+- [x] ft_putchar
+- [x] ft_putstr
+- [x] ft_putendl
+- [x] ft_putnbr
+#### Custom Functions from <ft_func.h> library
+##### Custom functions
+- [x] ft_ternary
+- [x] ft_for
+- [ ] ft_foreach
 #### Functions from <queue.h> library
 ##### Queue functions
 - [x] ft_queue_new
