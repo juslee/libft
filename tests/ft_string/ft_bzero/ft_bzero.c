@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:06:02 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 17:39:08 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/02 14:47:09 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	test_bzero_zero_length(void)
 	char	buffer[10];
 	size_t	i;
 
-	memset(buffer, 'x', sizeof(buffer));
+	ft_memset(buffer, 'x', sizeof(buffer));
 	ft_bzero(buffer, 0);
 	i = 0;
 	while (i < sizeof(buffer))
@@ -52,7 +52,7 @@ void	test_bzero_boundary(void)
 	char	buffer[20];
 	int		i;
 
-	memset(buffer, 'a', sizeof(buffer));
+	ft_memset(buffer, 'a', sizeof(buffer));
 	ft_bzero(buffer + 5, 10);
 	i = 0;
 	while (i < 5)

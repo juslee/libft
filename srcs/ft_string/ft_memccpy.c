@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unistd.h                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 23:24:28 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 12:08:57 by welee            ###   ########.fr       */
+/*   Created: 2024/05/02 13:29:21 by welee             #+#    #+#             */
+/*   Updated: 2024/05/02 14:42:43 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UNISTD_H
-# define FT_UNISTD_H
+#include <stddef.h>
 
-// Standard I/O functions
-void	ft_putchar(char c);
-void	ft_putstr(char c);
-void	ft_putendl(char c);
-void	ft_putnbr(int n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+{
+	unsigned char			*dest_ptr;
+	const unsigned char		*src_ptr;
+	size_t					i;
 
-// File manipulation functions
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-#endif
+	dest_ptr = (unsigned char *)dest;
+	src_ptr = (const unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		dest_ptr[i] = src_ptr[i];
+		if (src_ptr[i] == (unsigned char)c)
+			return (dest_ptr + i + 1);
+		i++;
+	}
+	return (NULL);
+}

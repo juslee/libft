@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unistd.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 23:24:28 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 12:08:57 by welee            ###   ########.fr       */
+/*   Created: 2024/05/07 10:55:04 by welee             #+#    #+#             */
+/*   Updated: 2024/05/07 11:00:06 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UNISTD_H
-# define FT_UNISTD_H
+/**
+ * @file ft_putchar.c
+ * @brief print a character
+ */
 
-// Standard I/O functions
-void	ft_putchar(char c);
-void	ft_putstr(char c);
-void	ft_putendl(char c);
-void	ft_putnbr(int n);
+#include <unistd.h>
 
-// File manipulation functions
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-#endif
+/**
+ * @brief print a character
+ * @param c character to be printed
+ */
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}

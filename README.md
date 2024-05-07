@@ -74,14 +74,14 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_isxdigit
 #### Functions from <string.h> library
 ##### String manipulation functions
-- [ ] ft_strcpy
-- [ ] ft_strncpy
-- [ ] ft_strcat
-- [ ] ft_strncat
-- [ ] ft_strstr
-- [ ] ft_strcmp
+- [x] ft_strcpy
+- [x] ft_strncpy
+- [x] ft_strcat
+- [x] ft_strncat
+- [x] ft_strstr
+- [x] ft_strcmp
 ##### Memory manipulation functions
-- [ ] ft_memccpy
+- [x] ft_memccpy
 #### Functions from <stdlib.h> library
 - [ ] ft_strtol
 - [ ] ft_strtoul
