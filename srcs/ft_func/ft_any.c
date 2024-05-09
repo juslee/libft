@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_for.c                                           :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 16:13:01 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 16:13:54 by welee            ###   ########.fr       */
+/*   Created: 2024/05/09 11:45:41 by welee             #+#    #+#             */
+/*   Updated: 2024/05/09 11:48:51 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @file ft_for.c
- * @brief loop from start to end
- */
-void	ft_for(int start, int end, void (*f)(int))
+int	ft_any(char **tab, int (*f)(const char *))
 {
-	while (start < end)
+	int	idx;
+
+	idx = 0;
+	while (tab[idx])
 	{
-		f(start);
-		start++;
+		if (f(tab[idx]))
+			return (1);
+		++idx;
 	}
+	return (0);
 }
