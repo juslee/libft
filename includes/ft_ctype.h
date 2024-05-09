@@ -6,13 +6,14 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:36:02 by welee             #+#    #+#             */
-/*   Updated: 2024/05/02 13:38:29 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 11:29:09 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CTYPE_H
 # define FT_CTYPE_H
 
+// C Type functions
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -21,7 +22,7 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-// Additional functions
+// Additional C Type functions
 int		ft_isupper(int c);
 int		ft_islower(int c);
 int		ft_isspace(int c);
