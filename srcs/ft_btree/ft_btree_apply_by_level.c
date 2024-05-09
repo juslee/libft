@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 14:20:05 by welee             #+#    #+#             */
-/*   Updated: 2024/05/09 15:56:29 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 15:59:54 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
  * @brief Apply a function to each node of a binary tree by level
  */
 
+#include <stdlib.h>
 #include "libft.h"
 
 /**

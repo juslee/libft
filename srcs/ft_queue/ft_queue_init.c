@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:57:24 by welee             #+#    #+#             */
-/*   Updated: 2024/05/09 14:36:32 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 16:00:42 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
  * are initialized to NULL.
  */
 
+#include <stdlib.h>
 #include "libft.h"
 
 /**
