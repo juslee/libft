@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 00:40:00 by welee             #+#    #+#             */
-/*   Updated: 2024/05/02 12:53:57 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 15:01:04 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <sys/types.h>
 # include "ft_list.h"
 
+// Queue structure
 typedef struct s_queue
 {
 	t_list	*front;
@@ -24,7 +25,7 @@ typedef struct s_queue
 }	t_queue;
 
 // Queue manipulation functions
-void	ft_queue_new(t_queue *queue, ssize_t max_size);
+t_queue	*ft_queue_init(ssize_t max_size);
 int		ft_queue_enqueue(t_queue *queue, void *content);
 void	*ft_queue_dequeue(t_queue *queue);
 int		ft_queue_is_empty(t_queue *queue);

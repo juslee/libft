@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_queue_new.c                                     :+:      :+:    :+:   */
+/*   ft_queue_init.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:57:24 by welee             #+#    #+#             */
-/*   Updated: 2024/05/02 11:24:04 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 14:36:32 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_queue_new.c
+ * @file ft_queue_init.c
  * @brief Allocates and returns a new queue. The variables 'front' and 'rear'
  * are initialized to NULL.
  */
@@ -21,14 +21,18 @@
 /**
  * @brief Allocates and returns a new queue. The variables 'front' and 'rear'
  * are initialized to NULL.
- * @param queue The queue to initialize
  * @param max_size The maximum size of the queue. If the maximum size is less
  * than 0, the queue will have no maximum size.
+ * @return A pointer to the new queue, or NULL if the allocation fails.
  */
-void	ft_queue_new(t_queue *queue, ssize_t max_size)
+t_queue	*ft_queue_init(ssize_t max_size)
 {
+	t_queue	*queue;
+
+	queue = (t_queue *)malloc(sizeof(t_queue));
 	queue->front = NULL;
 	queue->rear = NULL;
 	queue->size = 0;
 	queue->max_size = max_size;
+	return (queue);
 }

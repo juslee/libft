@@ -89,16 +89,28 @@ It will contain a lot of general purpose functions your programs will rely upon.
 #### Custom Functions from <ft_func.h> library
 ##### Custom functions
 - [x] ft_ternary
-- [x] ft_for
-- [ ] ft_foreach
+- [x] ft_foreach
+- [x] ft_map
+- [x] ft_any
+- [ ] ft_reduce
 #### Functions from <queue.h> library
 ##### Queue functions
-- [x] ft_queue_new
+- [x] ft_queue_init
 - [x] ft_queue_enqueue
 - [x] ft_queue_dequeue
 - [x] ft_queue_is_full
 - [x] ft_queue_is_empty
 - [x] ft_queue_clear
+#### Functions from <btree.h> library
+##### Binary tree functions
+- [x] ft_btree_create_node
+- [x] ft_btree_apply_prefix
+- [x] ft_btree_apply_infix
+- [x] ft_btree_apply_suffix
+- [x] ft_btree_insert_data
+- [x] ft_btree_search_item
+- [x] ft_btree_level_count
+- [x] ft_btree_apply_by_level
 #### Functions from <stack.h> library
 ##### Stack functions
 - [ ] ft_stack_new

@@ -6,12 +6,13 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 15:52:12 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 14:03:14 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include "ft_btree.h"
 # include "ft_ctype.h"
 # include "ft_func.h"
 # include "ft_list.h"

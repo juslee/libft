@@ -6,13 +6,14 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:31:26 by welee             #+#    #+#             */
-/*   Updated: 2024/04/30 00:40:27 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 14:06:44 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
 
+// List structure
 typedef struct s_list
 {
 	void			*content;

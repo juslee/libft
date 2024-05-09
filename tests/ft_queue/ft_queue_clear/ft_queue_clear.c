@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:32:35 by welee             #+#    #+#             */
-/*   Updated: 2024/05/02 12:38:24 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 15:06:48 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ void	free_content_function(void *content)
 // Test clear on empty queue
 void	test_clear_empty_queue(void)
 {
-	t_queue	queue;
+	t_queue	*queue;
 
-	ft_queue_new(&queue, -1);
-	ft_queue_clear(&queue, free_content_function);
-	assert(queue.front == NULL);
-	assert(queue.rear == NULL);
-	assert(queue.size == 0);
+	queue = ft_queue_init(-1);
+	ft_queue_clear(queue, free_content_function);
+	assert(queue->front == NULL);
+	assert(queue->rear == NULL);
+	assert(queue->size == 0);
 	printf("Test clear on empty queue passed.\n");
 }
 
 // Test clear on non-empty queue
 void	test_clear_non_empty_queue(void)
 {
-	t_queue	queue;
+	t_queue	*queue;
 	int		*value1;
 	int		*value2;
 
@@ -45,13 +45,13 @@ void	test_clear_non_empty_queue(void)
 	value2 = (int *)malloc(sizeof(int));
 	*value1 = 5;
 	*value2 = 10;
-	ft_queue_new(&queue, -1);
-	ft_queue_enqueue(&queue, value1);
-	ft_queue_enqueue(&queue, value2);
-	ft_queue_clear(&queue, free_content_function);
-	assert(queue.front == NULL);
-	assert(queue.rear == NULL);
-	assert(queue.size == 0);
+	queue = ft_queue_init(-1);
+	ft_queue_enqueue(queue, value1);
+	ft_queue_enqueue(queue, value2);
+	ft_queue_clear(queue, free_content_function);
+	assert(queue->front == NULL);
+	assert(queue->rear == NULL);
+	assert(queue->size == 0);
 	printf("Test clear on non-empty queue passed.\n");
 }
 
