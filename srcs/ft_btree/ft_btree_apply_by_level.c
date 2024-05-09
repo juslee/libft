@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 14:20:05 by welee             #+#    #+#             */
-/*   Updated: 2024/05/09 15:15:45 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 15:56:29 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,59 @@
 #include "libft.h"
 
 /**
- * @brief Free the content of a node
- * @param content pointer to the content to free
+ * @brief Process a single node and manage its children in the queue
+ * @param queue queue containing the nodes of the current level
+ * @param apply pointer to the function to apply
+ * @param current_level current level of the binary tree
+ * @param is_first_elem flag to indicate if the node is the first element of
+ * the level
  */
-void	free_content_function(void *content)
+void	process_node(t_queue *queue,
+	void (*apply)(void *, int, int),
+	int current_level,
+	int is_first_elem)
 {
-	free(content);
+	t_btree	*node;
+
+	node = ft_queue_dequeue(queue);
+	apply(node->item, current_level, is_first_elem);
+	if (node->left)
+		ft_queue_enqueue(queue, node->left);
+	if (node->right)
+		ft_queue_enqueue(queue, node->right);
+}
+
+/**
+ * @brief Process a level of a binary tree
+ * @param queue queue containing the nodes of the current level
+ * @param apply pointer to the function to apply
+ * @param current_level current level of the binary tree
+ */
+void	process_level(t_queue *queue,
+	void (*apply)(void *, int, int),
+	int current_level)
+{
+	int	level_size;
+	int	i;
+
+	level_size = queue->size;
+	i = 0;
+	while (i < level_size)
+	{
+		process_node(queue, apply, current_level, i == 0);
+		i++;
+	}
 }
 
 /**
  * @brief Apply a function to each node of a binary tree by level
  * @param root pointer to the root node of the binary tree
- * @param apply pointer to the function to apply to each node
+ * @param apply pointer to the function to apply
  */
-void	ft_btree_apply_by_level(t_btree *root,
-	void (*apply)(void *item, int current_level, int is_first_elem))
+void	ft_btree_apply_by_level(t_btree *root, void (*apply)(void *, int, int))
 {
 	t_queue	*queue;
-	t_btree	*node;
 	int		current_level;
-	int		is_first_elem;
 
 	if (!root || !apply)
 		return ;
@@ -46,18 +79,8 @@ void	ft_btree_apply_by_level(t_btree *root,
 	current_level = 0;
 	while (!ft_queue_is_empty(queue))
 	{
-		is_first_elem = 1;
-		while (queue->size > 0)
-		{
-			node = ft_queue_dequeue(queue);
-			apply(node->item, current_level, is_first_elem);
-			if (node->left)
-				ft_queue_enqueue(queue, node->left);
-			if (node->right)
-				ft_queue_enqueue(queue, node->right);
-			is_first_elem = 0;
-		}
+		process_level(queue, apply, current_level);
 		current_level++;
 	}
-	ft_queue_clear(queue, free_content_function);
+	ft_queue_clear(queue, free);
 }
