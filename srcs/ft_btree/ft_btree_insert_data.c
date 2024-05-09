@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 14:14:33 by welee             #+#    #+#             */
-/*   Updated: 2024/05/09 15:16:46 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/09 15:20:04 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	ft_btree_insert_data(t_btree **root, void *item,
 	else
 	{
 		if (node->right)
-			btree_insert_data(&node->right, item, cmp);
+			ft_btree_insert_data(&node->right, item, cmp);
 		else
-			node->right = btree_create_node(item);
+			node->right = ft_btree_create_node(item);
 	}
 }
