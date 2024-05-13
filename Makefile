@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/09 11:27:29 by welee            ###   ########.fr        #
+#    Updated: 2024/05/13 16:07:40 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,9 +53,11 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 clean:
 	$(RM) $(OBJS)
 	$(RM) -r $(DIST_DIR)
+	$(RM) -r $(DOCS_DIR)
 	$(MAKE) $(TEST_DIR) clean
 
 fclean: clean
+	$(RM) $(BIN_DIR)/libft.h
 	$(RM) $(BIN_DIR)/$(NAME)
 
 re: fclean all dist
@@ -91,6 +93,7 @@ dist: $(COMBINED_HEADER)
 	$(MAKE) $(DIST_DIR) all
 
 disttests: dist
+
 	../Libftest/grademe.sh
 
 tests: all
