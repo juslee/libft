@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/14 14:57:51 by welee            ###   ########.fr        #
+#    Updated: 2024/05/14 15:02:05 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean all dist
+re: fclean all
 
 .PHONY: all clean fclean re
