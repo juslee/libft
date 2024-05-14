@@ -1,0 +1,6 @@
+[submodule "tests/libft-war-machine"]
+	path = tests/libft-war-machine
+	url = git@github.com:0x050f/libft-war-machine.git
+[submodule "libft-war-machine"]
+	path = libft-war-machine
+	url = git@github.com:0x050f/libft-war-machine.git
