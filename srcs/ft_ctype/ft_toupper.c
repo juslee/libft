@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 12:32:00 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 14:14:30 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/14 17:41:34 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
  */
 int	ft_toupper(int c)
 {
-	if (ft_islower(c))
-		return (c - 32);
-	return (c);
+	if (c >= 'a' && c <= 'z')
+		return (c - ('a' - 'A'));
+	else
+		return (c);
 }

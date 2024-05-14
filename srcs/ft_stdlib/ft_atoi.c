@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:25:09 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 14:20:22 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/14 17:44:07 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,27 @@
  * @brief Convert a string to an integer.
  */
 
-#include "libft.h"
+// #include "libft.h"
+
+/**
+ * @brief Check if the character is a space.
+ * @param c The character to check.
+ * @return Nonzero if the character c is a space and zero if not.
+ */
+static int	ft_isspace(int c)
+{
+	return (c == ' ' || (c >= '\t' && c <= '\r'));
+}
+
+/**
+ * @brief Check if the character is a digit.
+ * @param c The character to check.
+ * @return Nonzero if the character c is a digit and zero if not.
+ */
+static int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
 
 /**
  * @brief Convert a string to an integer.

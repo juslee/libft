@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 12:33:53 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 14:14:15 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/14 17:40:13 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
  */
 int	ft_tolower(int c)
 {
-	if (ft_isupper(c))
-		return (c + 32);
-	return (c);
+	if (c >= 'A' && c <= 'Z')
+		return (c + ('a' - 'A'));
+	else
+		return (c);
 }

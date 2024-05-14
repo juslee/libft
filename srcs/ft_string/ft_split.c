@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 13:46:32 by welee             #+#    #+#             */
-/*   Updated: 2024/05/14 08:40:23 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/14 17:23:21 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,31 @@ static int	ft_count_words(const char *s, char c)
 }
 
 /**
+ * @brief Duplicates a string up to a certain length.
+ *
+ * @param s The string to duplicate.
+ * @param n The length to duplicate up to.
+ * @return char* The duplicated string.
+ */
+static char	*ft_strndup_a(const char *s, size_t n)
+{
+	char	*dup;
+	size_t	i;
+
+	dup = (char *)malloc(sizeof(char) * (n + 1));
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
+
+/**
  * @brief Splits a string into words by a charset.
  *
  * @param s The string to split.
@@ -76,7 +101,7 @@ char	**ft_split(char const *s, char c)
 			word_len++;
 		if (word_len)
 		{
-			split[i++] = ft_strndup(s, word_len);
+			split[i++] = ft_strndup_a(s, word_len);
 			s += word_len;
 		}
 	}
