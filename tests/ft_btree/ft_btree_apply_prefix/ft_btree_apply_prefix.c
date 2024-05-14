@@ -1,0 +1,132 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_btree_apply_prefix.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/14 10:47:32 by welee             #+#    #+#             */
+/*   Updated: 2024/05/14 12:51:27 by welee            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include "libft.h"
+
+#define MAX_ITEMS 100
+
+static int	g_test_results[MAX_ITEMS];
+static int	g_test_count;
+
+// Mock application function to apply to each node
+void	mock_apply(void *item)
+{
+	if (g_test_count < MAX_ITEMS)
+	{
+		g_test_results[g_test_count++] = *(int *)item;
+	}
+}
+
+// Helper to create and initialize tree nodes
+t_btree	*create_node(int value)
+{
+	int	*item;
+
+	item = (int *)malloc(sizeof(int));
+	*item = value;
+	return (ft_btree_create_node(item));
+}
+
+// Function to free an integer item
+void	free_int(void *item)
+{
+	free(item);
+}
+
+// Function to free the entire tree
+void	free_tree(t_btree *root, void (*free_item)(void *))
+{
+	if (!root)
+		return ;
+	free_tree(root->left, free_item);
+	free_tree(root->right, free_item);
+	free_item(root->item);
+	free(root);
+}
+
+void	reset_test_results(void)
+{
+	g_test_count = 0;
+}
+
+// Creating a simple tree
+//        10
+//       /  \
+//      5    20
+// Testing function for a simple tree
+void	test_apply_prefix_simple_tree(void)
+{
+	t_btree	*root;
+
+	reset_test_results();
+	root = create_node(10);
+	root->left = create_node(5);
+	root->right = create_node(20);
+
+	ft_btree_apply_prefix(root, mock_apply);
+
+	assert(g_test_count == 3);
+	printf("g_test_results[0]: %d\n", g_test_results[0]);
+	assert(g_test_results[0] == 10);
+	assert(g_test_results[1] == 5);
+	assert(g_test_results[2] == 20);
+
+	printf("test_apply_prefix_simple_tree: OK\n");
+	free_tree(root, free_int);
+}
+
+// Creating a more complex tree
+//        40
+//       /  \
+//      20   60
+//     / \    \
+//    10  30   80
+// Testing function for a more complex tree
+void	test_apply_prefix_complex_tree(void)
+{
+	t_btree	*root;
+
+	reset_test_results();
+	root = create_node(40);
+	root->left = create_node(20);
+	root->right = create_node(60);
+	root->left->left = create_node(10);
+	root->left->right = create_node(30);
+	root->right->right = create_node(80);
+
+	ft_btree_apply_prefix(root, mock_apply);
+
+	assert(g_test_count == 6);
+	assert(g_test_results[0] == 40);
+	assert(g_test_results[1] == 20);
+	assert(g_test_results[2] == 10);
+	assert(g_test_results[3] == 30);
+	assert(g_test_results[4] == 60);
+	assert(g_test_results[5] == 80);
+
+	printf("test_apply_prefix_complex_tree: OK\n");
+	free_tree(root, free_int);
+}
+
+int	main(void)
+{
+	test_apply_prefix_simple_tree();
+	test_apply_prefix_complex_tree();
+
+	printf("All tests passed!\n");
+	return (0);
+}
+
