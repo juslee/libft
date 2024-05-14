@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:25:54 by welee             #+#    #+#             */
-/*   Updated: 2024/05/02 15:26:32 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/14 13:59:12 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	test_isgraph_printable(void)
 	c = 33;
 	while (c < 127)
 	{
-		assert(ft_isgraph(c) == isgraph(c));
+		assert(ft_isgraph(c) > 0 && isgraph(c) > 0);
 		++c;
 	}
 	printf("test_isgraph_printable passed.\n");
@@ -35,13 +35,13 @@ void	test_isgraph_non_printable(void)
 	c = 0;
 	while (c < 33)
 	{
-		assert(ft_isgraph(c) == isgraph(c));
+		assert(ft_isgraph(c) == 0 && isgraph(c) == 0);
 		++c;
 	}
 	c = 127;
 	while (c < 256)
 	{
-		assert(ft_isgraph(c) == isgraph(c));
+		assert(ft_isgraph(c) == 0 && isgraph(c) == 0);
 		++c;
 	}
 	printf("test_isgraph_non_printable passed.\n");
@@ -54,7 +54,7 @@ void	test_isgraph_negative(void)
 	c = -128;
 	while (c < 0)
 	{
-		assert(ft_isgraph(c) == isgraph(c));
+		assert(ft_isgraph(c) == 0 && isgraph(c) == 0);
 		++c;
 	}
 	printf("test_isgraph_negative passed.\n");
