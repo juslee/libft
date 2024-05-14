@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/14 09:33:19 by welee            ###   ########.fr        #
+#    Updated: 2024/05/14 10:07:46 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,11 +89,12 @@ $(COMBINED_HEADER): $(HEADERS)
 dist: $(COMBINED_HEADER)
 	@$(MKDIR) $(DIST_DIR)
 	@find $(SRCS_DIR) -type f -exec cp {} $(DIST_DIR) \;
-	@cp -f $(PUBLIC_DIR)/* $(DIST_DIR)
+	@cp -f $(PUBLIC_DIR)/Makefile $(DIST_DIR)
 
 dist_tests: dist
 	$(MAKE) $(DIST_DIR) all
-	../Libftest/grademe.sh
+	@cp -f $(PUBLIC_DIR)/my_config.sh Libftest/my_config.sh
+	Libftest/grademe.sh
 
 tests: all
 	$(MAKE) $(TEST_DIR) all
