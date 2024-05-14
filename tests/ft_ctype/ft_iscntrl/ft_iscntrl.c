@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:24:52 by welee             #+#    #+#             */
-/*   Updated: 2024/05/02 15:25:31 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/14 13:54:02 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	test_iscntrl_control(void)
 	c = 0;
 	while (c < 32)
 	{
-		assert(ft_iscntrl(c) == iscntrl(c));
+		assert(ft_iscntrl(c) > 0 && iscntrl(c) > 0);
 		++c;
 	}
-	assert(ft_iscntrl(127) == iscntrl(127));
+	assert(ft_iscntrl(c) == 0 && iscntrl(c) == 0);
 	printf("test_iscntrl_control passed.\n");
 }
 
@@ -39,7 +39,7 @@ void	test_iscntrl_non_control(void)
 		if (c < 32 || c == 127)
 			;
 		else
-			assert(ft_iscntrl(c) == iscntrl(c));
+			assert(ft_iscntrl(c) == 0 && iscntrl(c) == 0);
 		++c;
 	}
 	printf("test_iscntrl_non_control passed.\n");
@@ -52,7 +52,7 @@ void	test_iscntrl_negative(void)
 	c = -128;
 	while (c < 0)
 	{
-		assert(ft_iscntrl(c) == iscntrl(c));
+		assert(ft_iscntrl(c) == 0 && iscntrl(c) == 0);
 		++c;
 	}
 	printf("test_iscntrl_negative passed.\n");
