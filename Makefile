@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/13 16:07:40 by welee            ###   ########.fr        #
+#    Updated: 2024/05/14 09:33:19 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,10 +90,9 @@ dist: $(COMBINED_HEADER)
 	@$(MKDIR) $(DIST_DIR)
 	@find $(SRCS_DIR) -type f -exec cp {} $(DIST_DIR) \;
 	@cp -f $(PUBLIC_DIR)/* $(DIST_DIR)
+
+dist_tests: dist
 	$(MAKE) $(DIST_DIR) all
-
-disttests: dist
-
 	../Libftest/grademe.sh
 
 tests: all
@@ -102,4 +101,4 @@ tests: all
 docs:
 	${DOXYGEN} ${DOXYGEN_CONFIG}
 
-.PHONY: all clean fclean re norm dist tests docs
+.PHONY: all clean fclean re norm dist dist_tests tests docs
