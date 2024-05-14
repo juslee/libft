@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 14:35:06 by welee             #+#    #+#              #
-#    Updated: 2024/04/22 13:47:24 by welee            ###   ########.fr        #
+#    Updated: 2024/05/14 13:34:45 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ LFLAGS = -L../bin -lft
 
 all: $(EXECS)
 %: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $< $(LFLAGS)
 	$@
 	$(RM) $@
 clean:
