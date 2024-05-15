@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:29:32 by welee             #+#    #+#             */
-/*   Updated: 2024/05/14 14:44:27 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/15 11:02:35 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	test_found_within_length(void)
 {
 	const char	*result = ft_strnstr("Hello, world!", "world", 13);
 
-	assert(result && ft_strcmp(result, "world!") == 0);
+	assert(result && strcmp(result, "world!") == 0);
 }
 
 void	test_not_found_within_length(void)
@@ -31,7 +31,7 @@ void	test_needle_at_end(void)
 {
 	const char	*result = ft_strnstr("Hello, world!", "world!", 13);
 
-	assert(result && ft_strcmp(result, "world!") == 0);
+	assert(result && strcmp(result, "world!") == 0);
 }
 
 void	test_needle_beyond_length(void)
@@ -48,7 +48,7 @@ void	test_empty_needle(void)
 {
 	const char	*result = ft_strnstr("Hello, world!", "", 13);
 
-	assert(result && ft_strcmp(result, "Hello, world!") == 0);
+	assert(result && strcmp(result, "Hello, world!") == 0);
 }
 
 void	test_empty_haystack(void)
@@ -60,14 +60,14 @@ void	test_both_empty(void)
 {
 	const char	*result = ft_strnstr("", "", 0);
 
-	assert(result && ft_strcmp(result, "") == 0);
+	assert(result && strcmp(result, "") == 0);
 }
 
 void	test_same_haystack_and_needle(void)
 {
 	const char	*result = ft_strnstr("Hello", "Hello", 5);
 
-	assert(result && ft_strcmp(result, "Hello") == 0);
+	assert(result && strcmp(result, "Hello") == 0);
 }
 
 int	main(void)

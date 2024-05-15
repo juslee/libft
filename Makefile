@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/15 09:04:04 by welee            ###   ########.fr        #
+#    Updated: 2024/05/15 13:40:29 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,9 +36,8 @@ SRCS = $(shell find $(SRCS_DIR) \
 	-or -name ft_atoi.c -or -name ft_calloc.c -or -name ft_strdup.c \
 	-or -name ft_substr.c -or -name ft_strjoin.c -or -name ft_strtrim.c -or -name ft_split.c -or -name ft_itoa.c \
 	-or -name ft_strmapi.c -or -name ft_striteri.c -or -name ft_putchar_fd.c -or -name ft_putstr_fd.c -or -name ft_putendl_fd.c \
-	-or -name ft_putnbr_fd.c)
-BONUS_SRC = $(shell find $(SRCS_DIR) \
-	-name ft_lstnew.c -or -name ft_lstadd_front.c -or -name ft_lstclear.c -or -name ft_lstiter.c -or -name ft_lstmap.c \
+	-or -name ft_putnbr_fd.c \
+	-or -name ft_lstnew.c -or -name ft_lstadd_front.c -or -name ft_lstclear.c -or -name ft_lstiter.c -or -name ft_lstmap.c \
 	-or -name ft_lstsize.c -or -name ft_lstlast.c -or -name ft_lstadd_back.c -or -name ft_lstdelone.c)
 # SRCS = $(shell find $(SRCS_DIR) -name '*.c')
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
@@ -103,11 +102,14 @@ $(COMBINED_HEADER): $(HEADERS)
 dist: $(COMBINED_HEADER)
 	@$(MKDIR) $(DIST_DIR)
 	@$(foreach src,$(SRCS),cp $(src) $(DIST_DIR);)
-	@$(foreach src,$(BONUS_SRCS),cp $(src) $(DIST_DIR);)
 	@cp -f $(PUBLIC_DIR)/Makefile $(DIST_DIR)
 
 dist_tests: dist
 	$(MAKE) $(DIST_DIR) all
+	@cp -f $(PUBLIC_DIR)/my_config.sh Libftest/my_config.sh
+	Libftest/grademe.sh
+dist_tests_bonus: dist
+	$(MAKE) $(DIST_DIR) bonus
 	@cp -f $(PUBLIC_DIR)/my_config.sh Libftest/my_config.sh
 	Libftest/grademe.sh
 

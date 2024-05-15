@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 00:34:22 by welee             #+#    #+#             */
-/*   Updated: 2024/04/30 00:37:27 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/15 11:07:20 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	test_ft_lstmap_empty_list(void)
 	head = NULL;
 	result = ft_lstmap(head, increment_content, del);
 	assert(result == NULL);
+	printf("test_ft_lstmap_empty_list passed.\n");
 }
 
 void	test_ft_lstmap_single_node(void)
@@ -69,6 +70,7 @@ void	test_ft_lstmap_single_node(void)
 	result = ft_lstmap(head, increment_content, del);
 	assert(result != NULL);
 	assert(*(int *)result->content == 11);
+	printf("test_ft_lstmap_single_node passed.\n");
 	ft_lstdelone(result, del);
 	ft_lstdelone(head, del);
 }
@@ -87,6 +89,7 @@ void	test_ft_lstmap_multiple_nodes(void)
 	assert(result != NULL);
 	assert(*(int *)result->content == 11);
 	assert(*(int *)result->next->content == 21);
+	printf("test_ft_lstmap_multiple_nodes passed.\n");
 
 	ft_lstdelone(head, del);
 	ft_lstdelone(second, del);

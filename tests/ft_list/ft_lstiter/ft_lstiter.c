@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 00:25:41 by welee             #+#    #+#             */
-/*   Updated: 2024/04/30 00:30:36 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/15 11:09:42 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	test_ft_lstiter_empty_list(void)
 	head = NULL;
 	ft_lstiter(head, increment_content);
 	assert(head == NULL);
+	printf("test_ft_lstiter_empty_list passed.\n");
 }
 
 void	test_ft_lstiter_single_node(void)
@@ -77,6 +78,7 @@ void	test_ft_lstiter_single_node(void)
 	head = new_node(10);
 	ft_lstiter(head, increment_content);
 	assert(*(int *)(head->content) == 11);
+	printf("test_ft_lstiter_single_node passed.\n");
 	free(head->content);
 	free(head);
 }
@@ -94,6 +96,7 @@ void	test_ft_lstiter_multiple_nodes(void)
 	assert(*(int *)(head->content) == 11);
 	assert(*(int *)(head->next->content) == 21);
 	assert(*(int *)(head->next->next->content) == 31);
+	printf("test_ft_lstiter_multiple_nodes passed.\n");
 
 	while (head)
 	{

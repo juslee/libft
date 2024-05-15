@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 00:20:26 by welee             #+#    #+#             */
-/*   Updated: 2024/04/30 00:32:47 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/15 11:11:34 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	test_ft_lstclear_empty_list(void)
 	head = NULL;
 	ft_lstclear(&head, dummy_del);
 	assert(head == NULL);
+	printf("test_ft_lstclear_empty_list passed.\n");
 }
 
 void	test_ft_lstclear_single_node(void)
@@ -73,6 +74,7 @@ void	test_ft_lstclear_single_node(void)
 	head = new_node("Hello");
 	ft_lstclear(&head, dummy_del);
 	assert(head == NULL);
+	printf("test_ft_lstclear_single_node passed.\n");
 }
 
 void	test_ft_lstclear_multiple_nodes(void)
@@ -85,6 +87,7 @@ void	test_ft_lstclear_multiple_nodes(void)
 
 	ft_lstclear(&head, dummy_del);
 	assert(head == NULL);
+	printf("test_ft_lstclear_multiple_nodes passed.\n");
 }
 
 int	main(void)

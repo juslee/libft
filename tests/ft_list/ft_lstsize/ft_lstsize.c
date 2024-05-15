@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 23:54:50 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 23:59:42 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/15 11:05:48 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	test_ft_lstsize_empty_list(void)
 
 	head = NULL;
 	assert(ft_lstsize(head) == 0);
+	printf("test_ft_lstsize_empty_list passed.\n");
 }
 
 void	test_ft_lstsize_single_element(void)
@@ -58,21 +59,24 @@ void	test_ft_lstsize_single_element(void)
 	x = 42;
 	head = create_new_node(&x);
 	assert(ft_lstsize(head) == 1);
-
+	printf("test_ft_lstsize_single_element passed.\n");
 	free_list(head);
 }
 
 void	test_ft_lstsize_multiple_elements(void)
 {
-	int		values[] = {42, 43, 44};
+	int		values[3];
 	t_list	*head;
 
+	values[0] = 42;
+	values[1] = 43;
+	values[2] = 44;
 	head = create_new_node(&values[0]);
 	head->next = create_new_node(&values[1]);
 	head->next->next = create_new_node(&values[2]);
 
 	assert(ft_lstsize(head) == 3);
-
+	printf("test_ft_lstsize_multiple_elements passed.\n");
 	free_list(head);
 }
 

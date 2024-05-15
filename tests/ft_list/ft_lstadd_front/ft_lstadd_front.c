@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 23:49:35 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 23:53:06 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/15 11:13:26 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,26 @@ void	test_ft_lstadd_front_to_empty_list(void)
 	ft_lstadd_front(&head, new);
 	assert(head == new);
 	assert(head->next == NULL);
+	printf("test_ft_lstadd_front_to_empty_list passed.\n");
 	free(new);
 }
 
 void	test_ft_lstadd_front_to_existing_list(void)
 {
-	int		values[] = {42, 43};
+	int		values[2];
 	t_list	*head;
 	t_list	*new;
 
+	values[0] = 42;
+	values[1] = 43;
 	head = ft_lstnew(&values[1]);
 	new = ft_lstnew(&values[0]);
 	ft_lstadd_front(&head, new);
 	assert(head == new);
 	assert(head->next != NULL);
 	assert(head->next->content == &values[1]);
+	assert(head->next->next == NULL);
+	printf("test_ft_lstadd_front_to_existing_list passed.\n");
 	free(head->next);
 	free(head);
 }
@@ -57,6 +62,9 @@ void	test_ft_lstadd_front_null_new(void)
 	original_head = head;
 	ft_lstadd_front(&head, NULL);
 	assert(head == original_head);
+	assert(head->content == &x);
+	assert(head->next == NULL);
+	printf("test_ft_lstadd_front_null_new passed.\n");
 	free(head);
 }
 
@@ -68,6 +76,8 @@ void	test_ft_lstadd_front_null_list(void)
 	x = 42;
 	new = ft_lstnew(&x);
 	ft_lstadd_front(NULL, new);
+	assert(new->next == NULL);
+	printf("test_ft_lstadd_front_null_list passed.\n");
 	free(new);
 }
 

@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 00:06:45 by welee             #+#    #+#             */
-/*   Updated: 2024/04/30 00:11:59 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/15 11:16:18 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ void	test_ft_lstadd_back_empty_list(void)
 	ft_lstadd_back(&head, new);
 	assert(head == new);
 	assert(head->next == NULL);
-	free(new);
+	assert(head->content == &x);
+	printf("test_ft_lstadd_back_empty_list passed.\n");
+	free_list(head);
 }
 
 void	test_ft_lstadd_back_single_element(void)
@@ -71,16 +73,20 @@ void	test_ft_lstadd_back_single_element(void)
 	ft_lstadd_back(&head, new);
 	assert(head->next == new);
 	assert(head->next->content == &y);
+	printf("test_ft_lstadd_back_single_element passed.\n");
 	free_list(head);
 }
 
 void	test_ft_lstadd_back_multiple_elements(void)
 {
-	int		values[] = {42, 43, 44};
+	int		values[3];
 	t_list	*head;
 	t_list	*second;
 	t_list	*new;
 
+	values[0] = 42;
+	values[1] = 43;
+	values[2] = 44;
 	head = create_new_node(&values[0]);
 	second = create_new_node(&values[1]);
 	head->next = second;
@@ -88,6 +94,7 @@ void	test_ft_lstadd_back_multiple_elements(void)
 	ft_lstadd_back(&head, new);
 	assert(second->next == new);
 	assert(second->next->content == &values[2]);
+	printf("test_ft_lstadd_back_multiple_elements passed.\n");
 	free_list(head);
 }
 
@@ -102,6 +109,9 @@ void	test_ft_lstadd_back_with_null_new(void)
 	original_head = head;
 	ft_lstadd_back(&head, NULL);
 	assert(head == original_head);
+	assert(head->content == &x);
+	assert(head->next == NULL);
+	printf("test_ft_lstadd_back_with_null_new passed.\n");
 	free_list(head);
 }
 
