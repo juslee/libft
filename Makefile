@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/14 17:33:35 by welee            ###   ########.fr        #
+#    Updated: 2024/05/15 09:04:04 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,10 +39,12 @@ SRCS = $(shell find $(SRCS_DIR) \
 	-or -name ft_putnbr_fd.c)
 BONUS_SRC = $(shell find $(SRCS_DIR) \
 	-name ft_lstnew.c -or -name ft_lstadd_front.c -or -name ft_lstclear.c -or -name ft_lstiter.c -or -name ft_lstmap.c \
-	-or -name ft_lstsize.c -or -name ft_lstlast.c -or -name ft_lstadd_back.c -or -name ft_lstdelone.c
+	-or -name ft_lstsize.c -or -name ft_lstlast.c -or -name ft_lstadd_back.c -or -name ft_lstdelone.c)
 # SRCS = $(shell find $(SRCS_DIR) -name '*.c')
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
-HEADERS = $(wildcard $(INCLUDES_DIR)/ft_*.h)
+# HEADER = $(shell find $(INCLUDES_DIR) -name '*.h')
+HEADERS = $(shell find $(INCLUDES_DIR) \
+	-name ft_ctype.h -or -name ft_stdlib.h -or -name ft_string.h -or -name ft_list.h -or -name ft_unistd.h)
 COMBINED_HEADER = $(DIST_DIR)/libft.h
 
 NORM = norminette
