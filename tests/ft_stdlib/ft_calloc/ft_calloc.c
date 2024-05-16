@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:59:24 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 21:46:19 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/16 17:20:50 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,10 @@ void	test_calloc_zero_count_and_size(void)
 	const size_t	count = 0;
 	const size_t	size = 0;
 	const void		*ptr = ft_calloc(count, size);
+	const void		*ptr2 = calloc(count, size);
 
 	assert(ptr != NULL);
+	assert(ptr2 != NULL);
 	free((void *)ptr);
 	printf("test_calloc_zero_count_and_size passed.\n");
 }

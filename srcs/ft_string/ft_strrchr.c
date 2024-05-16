@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:32:01 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 14:38:29 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/16 15:55:28 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,17 @@
  */
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
-	char			*res;
-	char			cc;
+	const char	*last_occurrence = NULL;
+	char		ch;
 
-	cc = (char) c;
-	res = NULL;
-	i = 0;
-	while (s[i])
+	ch = (char)c;
+	while (*s != '\0')
 	{
-		if (s[i] == cc)
-			res = (char *) &s[i];
-		i++;
+		if (*s == ch)
+			last_occurrence = s;
+		s++;
 	}
-	if (s[i] == c)
-		res = (char *) &s[i];
-	return (res);
+	if (ch == '\0')
+		return ((char *)s);
+	return ((char *)last_occurrence);
 }

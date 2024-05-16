@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 13:46:32 by welee             #+#    #+#             */
-/*   Updated: 2024/05/14 17:23:21 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/16 18:57:21 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
  * @brief Splits a string into words by a charset.
  */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
 
@@ -29,21 +30,19 @@
  */
 static int	ft_count_words(const char *s, char c)
 {
-	int		count;
-	int		in_word;
+	int	count;
 
 	count = 0;
-	in_word = 0;
 	while (*s)
 	{
-		if (*s != c && in_word == 0)
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 		{
-			in_word = 1;
 			count++;
+			while (*s && *s != c)
+				s++;
 		}
-		else if (*s == c)
-			in_word = 0;
-		s++;
 	}
 	return (count);
 }
@@ -55,7 +54,7 @@ static int	ft_count_words(const char *s, char c)
  * @param n The length to duplicate up to.
  * @return char* The duplicated string.
  */
-static char	*ft_strndup_a(const char *s, size_t n)
+static char	*ft_strndup(const char *s, size_t n)
 {
 	char	*dup;
 	size_t	i;
@@ -74,6 +73,50 @@ static char	*ft_strndup_a(const char *s, size_t n)
 }
 
 /**
+ * @brief Frees all the memory allocated for the split string.
+ *
+ * @param result The array of words.
+ * @param index The index to free up to.
+ */
+static void	ft_free_all(char **result, int index)
+{
+	int	i;
+
+	i = 0;
+	while (i < index)
+		free(result[i++]);
+	free(result);
+}
+
+static char	**ft_split_helper(char const *s, char c)
+{
+	char	**split;
+	size_t	i;
+	size_t	word_len;
+
+	split = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!split)
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		word_len = 0;
+		while (s[word_len] && s[word_len] != c)
+			word_len++;
+		if (word_len)
+		{
+			split[i] = ft_strndup(s, word_len);
+			if (!split[i++])
+				return (ft_free_all(split, i - 1), NULL);
+			s += word_len;
+		}
+	}
+	return (split[i] = NULL, split);
+}
+
+/**
  * @brief Splits a string into words by a charset.
  *
  * @param s The string to split.
@@ -82,29 +125,7 @@ static char	*ft_strndup_a(const char *s, size_t n)
  */
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	size_t	i;
-	size_t	word_len;
-
 	if (!s)
 		return (NULL);
-	split = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!split)
-		return (NULL);
-	i = 0;
-	while (*s)
-	{
-		while (*s == c)
-			s++;
-		word_len = 0;
-		while (s[word_len] && s[word_len] != c)
-			word_len++;
-		if (word_len)
-		{
-			split[i++] = ft_strndup_a(s, word_len);
-			s += word_len;
-		}
-	}
-	split[i] = NULL;
-	return (split);
+	return (ft_split_helper(s, c));
 }

@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:13:44 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 14:27:17 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/16 14:50:30 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@
 #include <stddef.h>
 
 /**
- * @brief Copy memory area.
+ * @brief The memmove() function copies n bytes from memory area src to
+	memory area dest.  The memory areas may overlap: copying takes
+	place as though the bytes in src are first copied into a
+	temporary array that does not overlap src or dest, and the bytes
+	are then copied from the temporary array to dest.
  * @param dst The destination.
  * @param src The source.
  * @param len The number of bytes to copy.
