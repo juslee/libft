@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:33:58 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 14:27:37 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 17:51:35 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
 
+	if (!s)
+		return (NULL);
 	ptr = (unsigned char *)s;
 	while (n--)
 		*ptr++ = (unsigned char)c;

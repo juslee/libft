@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:06:02 by welee             #+#    #+#             */
-/*   Updated: 2024/05/02 14:47:09 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 18:34:27 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,19 @@ void	test_bzero_boundary(void)
 	printf("test_bzero_boundary passed.\n");
 }
 
+void	test_bzero_null(void)
+{
+	ft_bzero(NULL, 0);
+	printf("test_bzero_null passed.\n");
+}
+
 int	main(void)
 {
 	test_bzero_basic();
 	test_bzero_zero_length();
 	test_bzero_boundary();
+	test_bzero_null();
 
 	printf("All tests passed.\n");
-	return 0;
+	return (0);
 }

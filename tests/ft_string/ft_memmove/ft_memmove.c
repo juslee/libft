@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:49:26 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 16:46:09 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 18:11:22 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,19 @@ void	test_memmove_zero_length(void)
 	printf("test_memmove_zero_length passed.\n");
 }
 
-// void	test_memmove_overlap(void)
-// {
-// 	char	buffer[20] = "OverlappingMove";
+void	test_memmove_overlap(void)
+{
+	char	buffer[20] = "OverlappingMove";
 
-// 	// Forward overlap: "OverlappingMove" -> "Overlappinglapping"
-// 	memmove(buffer + 10, buffer, 10);  // buffer + 10 will be overwritten
-// 	assert(memcmp(buffer + 10, "Overlapping", 10) == 0);
-// 	printf("test_memmove_overlap forward passed.\n");
+	ft_memmove(buffer + 11, buffer, 11);
+	assert(memcmp(buffer + 11, "Overlapping", 11) == 0);
+	printf("test_memmove_overlap forward passed.\n");
 
-// 	// Resetting buffer for backward move
-// 	memcpy(buffer, "OverlappingMove", 15);
-// 	// Moving end part to the start part of the buffer
-// 	memmove(buffer, buffer + 10, 10);
-// 	assert(memcmp(buffer, "gMovepingMo", 10) == 0);
-// 	printf("test_memmove_overlap backward passed.\n");
-// }
+	memcpy(buffer, "OverlappingMove", 20);
+	ft_memmove(buffer, buffer + 11, 4);
+	assert(memcmp(buffer, "MovelappingMove", 10) == 0);
+	printf("test_memmove_overlap backward passed.\n");
+}
 
 void	test_memmove_boundary(void)
 {
@@ -98,7 +95,7 @@ int	main(void)
 {
 	test_memmove_basic();
 	test_memmove_zero_length();
-	// test_memmove_overlap();
+	test_memmove_overlap();
 	test_memmove_boundary();
 	test_memmove_full_block();
 

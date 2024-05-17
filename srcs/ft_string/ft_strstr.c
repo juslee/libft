@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 16:19:52 by welee             #+#    #+#             */
-/*   Updated: 2024/05/02 16:21:38 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 18:25:52 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ char	*ft_strstr(char *str, char *to_find)
 	int	i;
 	int	c;
 
+	if (!str || !to_find)
+		return (0);
 	i = 0;
 	if (to_find[0] == '\0')
-	{
 		return (str);
-	}
 	while (str[i] != '\0')
 	{
 		c = 0;

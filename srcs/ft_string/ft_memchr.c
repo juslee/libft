@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:25:03 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 14:24:45 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 14:51:37 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*src;
 
+	if (!s)
+		return (NULL);
 	src = (unsigned char *)s;
 	while (n--)
 	{

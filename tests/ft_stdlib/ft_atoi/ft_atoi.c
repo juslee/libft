@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:40:56 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 21:53:27 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 18:39:41 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	test_atoi_basic(void)
 	const int	result = ft_atoi(str);
 
 	assert(result == 42);
+	assert(result == atoi(str));
 	printf("test_atoi_basic passed.\n");
 }
 
@@ -30,6 +31,7 @@ void	test_atoi_negative(void)
 	const int	result = ft_atoi(str);
 
 	assert(result == -42);
+	assert(result == atoi(str));
 	printf("test_atoi_negative passed.\n");
 }
 
@@ -39,6 +41,7 @@ void	test_atoi_positive(void)
 	const int	result = ft_atoi(str);
 
 	assert(result == 42);
+	assert(result == atoi(str));
 	printf("test_atoi_positive passed.\n");
 }
 
@@ -48,6 +51,7 @@ void	test_atoi_whitespace(void)
 	const int	result = ft_atoi(str);
 
 	assert(result == 42);
+	assert(result == atoi(str));
 	printf("test_atoi_whitespace passed.\n");
 }
 
@@ -57,6 +61,7 @@ void	test_atoi_long(void)
 	const int	result = ft_atoi(str);
 
 	assert(result == 1234567890);
+	assert(result == atoi(str));
 	printf("test_atoi_long passed.\n");
 }
 
@@ -66,6 +71,7 @@ void	test_atoi_overflow(void)
 	const int	result = ft_atoi(str);
 
 	assert(result == 2147483647);
+	assert(result == atoi(str));
 	printf("test_atoi_overflow passed.\n");
 }
 
@@ -75,6 +81,7 @@ void	test_atoi_underflow(void)
 	const int	result = ft_atoi(str);
 
 	assert(result == -2147483648);
+	assert(result == atoi(str));
 	printf("test_atoi_underflow passed.\n");
 }
 
@@ -93,6 +100,7 @@ void	test_atoi_empty(void)
 	const int	result = ft_atoi(str);
 
 	assert(result == 0);
+	assert(result == atoi(str));
 	printf("test_atoi_empty passed.\n");
 }
 

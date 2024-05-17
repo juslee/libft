@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:20:24 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 15:01:44 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 15:15:35 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strchr(const char *s, int c)
 	unsigned int	i;
 	char			cc;
 
+	if (!s)
+		return (NULL);
 	cc = (char) c;
 	i = 0;
 	while (s[i])

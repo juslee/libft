@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 16:22:29 by welee             #+#    #+#             */
-/*   Updated: 2024/05/02 16:49:10 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 18:21:10 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
  */
 int	ft_strcmp(const char *s1, const char *s2)
 {
+	if (!s1 || !s2)
+		return (0);
 	while (*s1 && (*s1 == *s2))
 	{
 		s1++;

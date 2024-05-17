@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:25:09 by welee             #+#    #+#             */
-/*   Updated: 2024/05/14 17:44:07 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 18:40:47 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static int	ft_isdigit(int c)
  * @brief Convert a string to an integer.
  * @param nptr The string to convert.
  * @return The integer value.
+ * @note The function stops reading the string nptr at the first character that
+ * is not a digit.
  */
 int	ft_atoi(const char *nptr)
 {

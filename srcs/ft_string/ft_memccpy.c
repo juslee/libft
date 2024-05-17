@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:29:21 by welee             #+#    #+#             */
-/*   Updated: 2024/05/16 15:00:47 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 16:35:12 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	const unsigned char		*src_ptr;
 	size_t					i;
 
+	if (!dest || !src)
+		return (NULL);
 	dest_ptr = (unsigned char *)dest;
 	src_ptr = (const unsigned char *)src;
 	i = 0;

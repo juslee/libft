@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:09:38 by welee             #+#    #+#             */
-/*   Updated: 2024/05/16 15:44:23 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 17:56:44 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,19 @@ void	test_memcpy_full_block(void)
 	printf("test_memcpy_full_block passed.\n");
 }
 
+void	test_memcpy_null(void)
+{
+	ft_memcpy(NULL, NULL, 0);
+	printf("test_memcpy_null passed.\n");
+}
+
 int	main(void)
 {
 	test_memcpy_basic();
 	test_memcpy_zero_length();
 	test_memcpy_boundary();
 	test_memcpy_full_block();
+	test_memcpy_null();
 
 	printf("All tests passed.\n");
 	return (0);

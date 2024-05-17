@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 17:02:43 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 17:23:42 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 16:35:18 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	test_memcmp_identical(void)
 	const int	result = ft_memcmp(arr1, arr2, sizeof(arr1));
 
 	assert(result == 0);
+	assert(result == memcmp(arr1, arr2, sizeof(arr1)));
 	printf("test_memcmp_identical passed.\n");
 }
 
@@ -32,6 +33,7 @@ void	test_memcmp_different(void)
 	const int	result = ft_memcmp(arr1, arr2, sizeof(arr1));
 
 	assert(result != 0);
+	assert(result == memcmp(arr1, arr2, sizeof(arr1)));
 	printf("test_memcmp_different passed.\n");
 }
 
@@ -42,6 +44,7 @@ void	test_memcmp_partial(void)
 	const int	result = ft_memcmp(arr1, arr2, 7);
 
 	assert(result == 0);
+	assert(result == memcmp(arr1, arr2, 7));
 	printf("test_memcmp_partial passed.\n");
 }
 
@@ -52,6 +55,7 @@ void	test_memcmp_binary_data(void)
 	const int	result = ft_memcmp(arr1, arr2, sizeof(arr1));
 
 	assert(result != 0);
+	assert(result == memcmp(arr1, arr2, sizeof(arr1)));
 	printf("test_memcmp_binary_data passed.\n");
 }
 
@@ -62,7 +66,19 @@ void	test_memcmp_zero_length(void)
 	const int	result = ft_memcmp(arr1, arr2, 0);
 
 	assert(result == 0);
+	assert(result == memcmp(arr1, arr2, 0));
 	printf("test_memcmp_zero_length passed.\n");
+}
+
+void	test_memcmp_null(void)
+{
+	const char	*arr1 = NULL;
+	const char	*arr2 = NULL;
+	const int	result = ft_memcmp(arr1, arr2, 0);
+
+	assert(result == 0);
+	assert(result == memcmp(arr1, arr2, 0));
+	printf("test_memcmp_null passed.\n");
 }
 
 int	main(void)
@@ -72,6 +88,7 @@ int	main(void)
 	test_memcmp_partial();
 	test_memcmp_binary_data();
 	test_memcmp_zero_length();
+	test_memcmp_null();
 
 	printf("All tests passed.\n");
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:40:37 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 21:54:28 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 17:45:07 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,21 @@ void	test_memset_boundary(void)
 	printf("test_memset_boundary passed.\n");
 }
 
+void	test_memset_null_pointer(void)
+{
+	ft_memset(NULL, 'A', 10);
+	printf("test_memset_null_pointer passed.\n");
+}
+
+void	test_memset_evaluator(void)
+{
+	char	*s = NULL;
+
+	ft_memset(s, 'A', 5);
+	memset(s, 'A', 5);
+	printf("test_memset_evaluator passed.\n");
+}
+
 int	main(void)
 {
 	test_memset_basic_fill();
@@ -99,6 +114,7 @@ int	main(void)
 	test_memset_zero_length();
 	test_memset_non_char_value();
 	test_memset_boundary();
+	test_memset_null_pointer();
 
 	printf("All tests passed.\n");
 	return 0;

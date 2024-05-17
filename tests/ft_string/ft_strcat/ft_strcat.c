@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 11:01:08 by welee             #+#    #+#             */
-/*   Updated: 2024/05/07 11:25:16 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 18:42:50 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,36 @@ void	test_stress_concat(void)
 	}
 	assert(ft_strlen(dest) == 105);
 	printf("test_stress_concat passed.\n");
+}
+
+void	test_null_dest(void)
+{
+	char	*dest = NULL;
+	const char	*src = "World";
+
+	ft_strcat(dest, src);
+	assert(dest == NULL);
+	printf("test_null_dest passed.\n");
+}
+
+void	test_null_src(void)
+{
+	char	dest[50] = "Hello";
+	const char	*src = NULL;
+
+	ft_strcat(dest, src);
+	assert(ft_strcmp(dest, "Hello") == 0);
+	printf("test_null_src passed.\n");
+}
+
+void	test_null_dest_and_src(void)
+{
+	char	*dest = NULL;
+	const char	*src = NULL;
+
+	ft_strcat(dest, src);
+	assert(dest == NULL);
+	printf("test_null_dest_and_src passed.\n");
 }
 
 int	main(void)

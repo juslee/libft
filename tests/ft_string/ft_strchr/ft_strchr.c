@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 13:40:12 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 17:55:25 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 18:18:40 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	test_strchr_found(void)
 	const char	*result = ft_strchr(str, 'w');
 
 	assert(result != NULL && *result == 'w');
+	assert(result == strchr(str, 'w'));
 	printf("test_strchr_found passed.\n");
 }
 
@@ -30,6 +31,7 @@ void	test_strchr_not_found(void)
 	const char	*result = ft_strchr(str, 'z');
 
 	assert(result == NULL);
+	assert(result == strchr(str, 'z'));
 	printf("test_strchr_not_found passed.\n");
 }
 
@@ -39,6 +41,7 @@ void	test_strchr_first_char(void)
 	const char	*result = ft_strchr(str, 'H');
 
 	assert(result == str && *result == 'H');
+	assert(result == strchr(str, 'H'));
 	printf("test_strchr_first_char passed.\n");
 }
 
@@ -48,6 +51,7 @@ void	test_strchr_find_null(void)
 	const char	*result = ft_strchr(str, '\0');
 
 	assert(result == &str[strlen(str)]);
+	assert(result == strchr(str, '\0'));
 	printf("test_strchr_find_null passed.\n");
 }
 
@@ -58,6 +62,7 @@ void	test_strchr_return_value(void)
 	const char	*result = ft_strchr(str, 'w');
 
 	assert(result == expected);
+	assert(result == strchr(str, 'w'));
 	printf("test_strchr_return_value passed.\n");
 }
 
@@ -67,6 +72,7 @@ void	test_strchr_zero_length(void)
 	const char	*result = ft_strchr(str, 'Z');
 
 	assert(result == NULL);
+	assert(result == strchr(str, 'Z'));
 	printf("test_strchr_zero_length passed.\n");
 }
 
@@ -76,6 +82,7 @@ void	test_strchr_repeated_char(void)
 	const char	*result = ft_strchr(str, 'o');
 
 	assert(result == &str[4] && *result == 'o');
+	assert(result == strchr(str, 'o'));
 	printf("test_strchr_repeated_char passed.\n");
 }
 
