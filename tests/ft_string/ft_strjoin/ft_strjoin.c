@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:21:04 by welee             #+#    #+#             */
-/*   Updated: 2024/05/17 10:11:28 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/17 11:18:48 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,9 @@ void	test_ft_strjoin_with_empty(void)
 
 void	test_ft_strjoin_with_null(void)
 {
-	char	*s1;
+	char	*s1 = "Hello";
 	char	*result;
 
-	s1 = strcpy(s1, "Hello");
 	result = ft_strjoin(s1, NULL);
 	assert(result != NULL && strcmp(result, "Hello") == 0);
 	free(result);
