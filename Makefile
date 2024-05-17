@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/17 10:11:28 by welee            ###   ########.fr        #
+#    Updated: 2024/05/17 11:05:03 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ MAKE = make -C
 CD = cd
 FRANCINETTE = francinette
 FRANCINETTE_FLAGS = -s
+WHOAMI = $(whoami)
 
 SRCS = $(shell find $(SRCS_DIR) \
 	-name ft_isalpha.c -or -name ft_isdigit.c -or -name ft_isalnum.c -or -name ft_isascii.c -or -name ft_isprint.c \
@@ -106,6 +107,7 @@ dist: $(COMBINED_HEADER)
 	@$(MKDIR) $(DIST_DIR)
 	@$(foreach src,$(SRCS),cp $(src) $(DIST_DIR);)
 	@cp -f $(PUBLIC_DIR)/Makefile $(DIST_DIR)
+	@echo $(shell whoami) > $(DIST_DIR)/author
 
 dist_tests: dist
 	$(MAKE) $(DIST_DIR) all
