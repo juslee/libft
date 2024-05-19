@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 14:35:06 by welee             #+#    #+#              #
-#    Updated: 2024/05/15 10:44:18 by welee            ###   ########.fr        #
+#    Updated: 2024/05/19 10:26:49 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,15 @@ CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 LFLAGS = -L../bin -lft
+UNAME := $(shell uname)
+ifeq ($(UNAME), Darwin)
+# macOS specific settings
+	CFLAGS += -DDEFAULT_INCLUDE
+else ifeq ($(UNAME), Linux)
+# Linux specific settings
+	CFLAGS += -I/usr/include/bsd
+	LDFLAGS += -lbsd
+endif
 
 all: $(EXECS) $(BONUS_EXECS)
 %: %.c

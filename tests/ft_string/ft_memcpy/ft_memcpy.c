@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:09:38 by welee             #+#    #+#             */
-/*   Updated: 2024/05/17 17:56:44 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/19 13:51:15 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,20 @@ void	test_memcpy_null(void)
 	printf("test_memcpy_null passed.\n");
 }
 
+// void	test_memcpy_n_bigger_than_src(void)
+// {
+// 	const char	src[] = "Hello, world!";
+// 	// char		dest2[20];
+// 	char		dest[20];
+
+// 	ft_memcpy(dest, src, sizeof(dest) + 1);
+// 	// memcpy(dest2, src, sizeof(dest) + 1);
+// 	printf("src: %s\n", src);
+// 	printf("dest: %s\n", dest);
+// 	assert(strcmp(dest, src) == 0);
+// 	printf("test_memcpy_n_bigger_than_src passed.\n");
+// }
+
 int	main(void)
 {
 	test_memcpy_basic();
@@ -90,6 +104,7 @@ int	main(void)
 	test_memcpy_boundary();
 	test_memcpy_full_block();
 	test_memcpy_null();
+	// test_memcpy_n_bigger_than_src();
 
 	printf("All tests passed.\n");
 	return (0);
