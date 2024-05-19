@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 14:35:06 by welee             #+#    #+#              #
-#    Updated: 2024/05/19 10:26:49 by welee            ###   ########.fr        #
+#    Updated: 2024/05/19 13:57:13 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ SRCS = $(shell find . \
 BONUS_SRCS = $(shell find . \
 	-name ft_lstnew.c -or -name ft_lstadd_front.c -or -name ft_lstclear.c -or -name ft_lstiter.c -or -name ft_lstmap.c \
 	-or -name ft_lstsize.c -or -name ft_lstlast.c -or -name ft_lstadd_back.c -or -name ft_lstdelone.c)
+SRCS_ALL = $(shell find . -name '*.c')
+OBJS_ALL = $(SRCS_ALL:.c=.o)
+EXECS_ALL = $(SRCS_ALL:.c=)
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 EXECS = $(SRCS:.c=)
@@ -43,6 +46,8 @@ else ifeq ($(UNAME), Linux)
 	LDFLAGS += -lbsd
 endif
 
+all_all: $(EXECS_ALL)
+
 all: $(EXECS) $(BONUS_EXECS)
 %: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $< $(LFLAGS)
@@ -54,3 +59,5 @@ clean:
 fclean: clean
 #	${RM} $(NAME)
 re: fclean all
+
+.PHONY: all clean fclean re

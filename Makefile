@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/19 09:11:48 by welee            ###   ########.fr        #
+#    Updated: 2024/05/19 13:59:19 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,9 +43,10 @@ SRCS = $(shell find $(SRCS_DIR) \
 	-or -name ft_putnbr_fd.c \
 	-or -name ft_lstnew.c -or -name ft_lstadd_front.c -or -name ft_lstclear.c -or -name ft_lstiter.c -or -name ft_lstmap.c \
 	-or -name ft_lstsize.c -or -name ft_lstlast.c -or -name ft_lstadd_back.c -or -name ft_lstdelone.c)
-# SRCS = $(shell find $(SRCS_DIR) -name '*.c')
+SRCS_ALL = $(shell find $(SRCS_DIR) -name '*.c')
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
-# HEADER = $(shell find $(INCLUDES_DIR) -name '*.h')
+OBJS_ALL = $(SRCS_ALL:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
+HEADER_ALL = $(shell find $(INCLUDES_DIR) -name '*.h')
 HEADERS = $(shell find $(INCLUDES_DIR) \
 	-name ft_ctype.h -or -name ft_stdlib.h -or -name ft_string.h -or -name ft_list.h -or -name ft_unistd.h)
 COMBINED_HEADER = $(DIST_DIR)/libft.h
@@ -55,6 +56,13 @@ NORM_FLAGS = -R CheckForbiddenSourceHeader -R CheckDefine
 
 DOXYGEN = doxygen
 DOXYGEN_CONFIG = Doxyfile
+
+all_all: $(NAME)_ALL
+
+$(NAME)_ALL: $(OBJS_ALL) $(COMBINED_HEADER)
+	$(MKDIR) $(BIN_DIR)
+	mv $(COMBINED_HEADER) $(BIN_DIR)
+	$(LIBC) $(BIN_DIR)/$(NAME) $(OBJS_ALL)
 
 all: ${NAME}
 
@@ -125,6 +133,12 @@ dist_tests_bonus: dist
 
 tests: all
 	$(MAKE) $(TEST_DIR) all
+
+tests_bonus: all
+	$(MAKE) $(TEST_DIR) bonus
+
+tests_all: all_all
+	$(MAKE) $(TEST_DIR) all_all
 
 docs:
 	${DOXYGEN} ${DOXYGEN_CONFIG}

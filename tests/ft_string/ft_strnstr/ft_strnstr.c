@@ -6,14 +6,16 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 14:29:32 by welee             #+#    #+#             */
-/*   Updated: 2024/05/19 09:44:53 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/19 15:03:18 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
-// #include <bsd/string.h>
+#ifdef __GLIBC__
+# include <bsd/string.h>
+#endif
 #include "libft.h"
 
 void	test_found_within_length(void)
@@ -71,16 +73,16 @@ void	test_same_haystack_and_needle(void)
 	assert(result && strcmp(result, "Hello") == 0);
 }
 
-// void	test(void)
-// {
-// 	const char	*result = ft_strnstr("Hello", "Hel", 2);
-// 	const char	*result2 = strnstr("Hello", "Hel", 2);
+void	test(void)
+{
+	const char	*result = ft_strnstr("Hello", "Hel", 2);
+	const char	*result2 = strnstr("Hello", "Hel", 2);
 
-// 	printf("ft_strnstr: %s\n", result);
-// 	printf("strnstr: %s\n", result2);
-// 	assert(result == result2);
-// 	printf("Test passed.\n");
-// }
+	printf("ft_strnstr: %s\n", result);
+	printf("strnstr: %s\n", result2);
+	assert(result == result2);
+	printf("Test passed.\n");
+}
 
 int	main(void)
 {
@@ -93,6 +95,7 @@ int	main(void)
 	test_empty_haystack();
 	test_both_empty();
 	test_same_haystack_and_needle();
+	test();
 
 	printf("All tests passed.\n");
 	return (0);
