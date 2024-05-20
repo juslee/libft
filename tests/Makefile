@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 14:35:06 by welee             #+#    #+#              #
-#    Updated: 2024/05/19 13:57:13 by welee            ###   ########.fr        #
+#    Updated: 2024/05/20 14:43:53 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,14 +35,14 @@ INCLUDES = -I ../includes
 CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
-LFLAGS = -L../bin -lft
+LDFLAGS = -L../bin -lft
 UNAME := $(shell uname)
 ifeq ($(UNAME), Darwin)
 # macOS specific settings
 	CFLAGS += -DDEFAULT_INCLUDE
 else ifeq ($(UNAME), Linux)
 # Linux specific settings
-	CFLAGS += -I/usr/include/bsd
+#	CFLAGS += -I/usr/include/bsd
 	LDFLAGS += -lbsd
 endif
 
@@ -50,7 +50,7 @@ all_all: $(EXECS_ALL)
 
 all: $(EXECS) $(BONUS_EXECS)
 %: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $< $(LFLAGS)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $< $(LDFLAGS)
 	$@
 	$(RM) $@
 clean:
