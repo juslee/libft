@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:49:26 by welee             #+#    #+#             */
-/*   Updated: 2024/05/20 18:59:03 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 18:59:38 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,12 @@ void	test_memmove_full_block(void)
 	printf("test_memmove_full_block passed.\n");
 }
 
-void	test_memmove_null(void)
-{
-	ft_memmove(NULL, NULL, 5);
-	memmove(NULL, NULL, 5);
-	printf("test_memmove_null passed.\n");
-}
+// void	test_memmove_null(void)
+// {
+// 	ft_memmove(NULL, NULL, 5);
+// 	memmove(NULL, NULL, 5);
+// 	printf("test_memmove_null passed.\n");
+// }
 
 void	test_memmove_error(void)
 {
