@@ -6,10 +6,11 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:59:24 by welee             #+#    #+#             */
-/*   Updated: 2024/05/19 16:58:45 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 14:57:10 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
