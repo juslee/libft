@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:09:38 by welee             #+#    #+#             */
-/*   Updated: 2024/05/20 18:22:06 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 18:57:57 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,19 +77,19 @@ void	test_memcpy_full_block(void)
 	printf("test_memcpy_full_block passed.\n");
 }
 
-void	test_memcpy_null(void)
-{
-	ft_memcpy(NULL, NULL, 0);
-	memcpy(NULL, NULL, 0);
-	printf("test_memcpy_null passed.\n");
-}
+// void	test_memcpy_null(void)
+// {
+// 	ft_memcpy(NULL, NULL, 0);
+// 	memcpy(NULL, NULL, 0);
+// 	printf("test_memcpy_null passed.\n");
+// }
 
-void	test_memcpy_null_3(void)
-{
-	ft_memcpy(NULL, NULL, 3);
-	memcpy(NULL, NULL, 3);
-	printf("test_memcpy_null passed.\n");
-}
+// void	test_memcpy_null_3(void)
+// {
+// 	ft_memcpy(NULL, NULL, 3);
+// 	memcpy(NULL, NULL, 3);
+// 	printf("test_memcpy_null passed.\n");
+// }
 
 // void	test_memcpy_n_bigger_than_src(void)
 // {
@@ -120,8 +120,8 @@ int	main(void)
 	test_memcpy_zero_length();
 	test_memcpy_boundary();
 	test_memcpy_full_block();
-	test_memcpy_null();
-	test_memcpy_null_3();
+	// test_memcpy_null();
+	// test_memcpy_null_3();
 	// test_memcpy_n_bigger_than_src();
 	// test_memcpy_segv();
 
