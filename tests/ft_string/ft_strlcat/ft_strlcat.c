@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:34:19 by welee             #+#    #+#             */
-/*   Updated: 2024/05/19 13:33:21 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 16:28:09 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,7 @@ int	main(void)
 	test_strlcat_exact_fit();
 	test_strlcat_zero_length();
 	// test_strlcat_null_dest_and_src();
-	test_strlcat_null_dest();
+	// test_strlcat_null_dest();
 	// test_strlcat_null_src();
 	test_strlcat_empty_dest();
 	test_strlcat_empty_src();

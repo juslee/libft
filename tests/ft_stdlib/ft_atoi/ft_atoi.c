@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:40:56 by welee             #+#    #+#             */
-/*   Updated: 2024/05/17 18:39:41 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 16:47:24 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int	main(void)
 	test_atoi_long();
 	test_atoi_overflow();
 	test_atoi_underflow();
-	test_atoi_null();
+	// test_atoi_null();
 	test_atoi_empty();
 
 	printf("All tests passed.\n");

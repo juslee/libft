@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 17:13:44 by welee             #+#    #+#             */
-/*   Updated: 2024/04/29 14:35:23 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 15:55:04 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
-	if (!s)
-		return (0);
 	len = 0;
 	while (s[len])
 		++len;

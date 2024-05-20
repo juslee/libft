@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:49:26 by welee             #+#    #+#             */
-/*   Updated: 2024/05/17 18:11:22 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 18:47:16 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,28 @@ void	test_memmove_full_block(void)
 	printf("test_memmove_full_block passed.\n");
 }
 
+void	test_memmove_null(void)
+{
+	ft_memmove(NULL, NULL, 5);
+	memmove(NULL, NULL, 5);
+	printf("test_memmove_null passed.\n");
+}
+
+void	test_memmove_error(void)
+{
+	int size = 10;
+	char *dst = (char *)malloc(size);
+	char *data = (char *)malloc(size);
+
+	ft_memset(data, 'A', size);
+	ft_memmove(dst, data, size);
+	dst = (char *)malloc(size);
+	data = (char *)malloc(size);
+	ft_memset(data, 'A', size);
+	ft_memmove(dst, data, size);
+}
+
+
 int	main(void)
 {
 	test_memmove_basic();
@@ -98,6 +120,7 @@ int	main(void)
 	test_memmove_overlap();
 	test_memmove_boundary();
 	test_memmove_full_block();
+	test_memmove_null();
 
 	printf("All tests passed.\n");
 	return (0);

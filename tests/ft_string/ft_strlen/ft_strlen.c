@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:49:08 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 21:14:47 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 16:26:51 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	main(void)
 	test_strlen_basic();
 	test_strlen_long();
 	test_strlen_whitespace();
-	test_strlen_null();
+	// test_strlen_null();
 	test_strlen_null_byte();
 
 	printf("All tests passed.\n");

@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:14:42 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 18:05:45 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 16:47:02 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	main(void)
 {
 	test_strdup_basic();
 	test_strdup_empty();
-	test_strdup_null();
+	// test_strdup_null();
 	test_strdup_long();
 	test_strdup_zero_length();
 

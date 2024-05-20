@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:09:38 by welee             #+#    #+#             */
-/*   Updated: 2024/05/19 13:51:15 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 18:22:06 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,14 @@ void	test_memcpy_full_block(void)
 void	test_memcpy_null(void)
 {
 	ft_memcpy(NULL, NULL, 0);
+	memcpy(NULL, NULL, 0);
+	printf("test_memcpy_null passed.\n");
+}
+
+void	test_memcpy_null_3(void)
+{
+	ft_memcpy(NULL, NULL, 3);
+	memcpy(NULL, NULL, 3);
 	printf("test_memcpy_null passed.\n");
 }
 
@@ -97,6 +105,15 @@ void	test_memcpy_null(void)
 // 	printf("test_memcpy_n_bigger_than_src passed.\n");
 // }
 
+// void	test_memcpy_segv(void)
+// {
+// 	printf("func: ft_memcpy(\"            \", NULL, 17)\n");
+// 	ft_memcpy("            ", ((void *)0), 17);
+// 	printf("func: memcpy(\"            \", NULL, 17)\n");
+// 	memcpy("            ", ((void *)0), 17);
+// 	printf("test_memcpy_segv passed.\n");
+// }
+
 int	main(void)
 {
 	test_memcpy_basic();
@@ -104,7 +121,9 @@ int	main(void)
 	test_memcpy_boundary();
 	test_memcpy_full_block();
 	test_memcpy_null();
+	test_memcpy_null_3();
 	// test_memcpy_n_bigger_than_src();
+	// test_memcpy_segv();
 
 	printf("All tests passed.\n");
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:32:43 by welee             #+#    #+#             */
-/*   Updated: 2024/05/16 12:23:36 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 16:30:59 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 	size_t	len;
 
-	if (s == NULL)
-		return (NULL);
 	len = ft_strlen(s) + 1;
 	dup = (char *)malloc(len);
 	if (dup == NULL)

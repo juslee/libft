@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:06:07 by welee             #+#    #+#             */
-/*   Updated: 2024/05/17 18:25:15 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 16:36:09 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	big_len;
 	size_t	i;
 
-	if (!big || !little)
-		return (NULL);
 	little_len = ft_strlen(little);
 	big_len = ft_strlen(big);
 	if (little_len == 0)

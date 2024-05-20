@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:28:00 by welee             #+#    #+#             */
-/*   Updated: 2024/05/17 14:51:42 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 16:37:10 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*src1;
 	unsigned char	*src2;
 
-	if (!s1 || !s2)
-		return (0);
 	src1 = (unsigned char *)s1;
 	src2 = (unsigned char *)s2;
 	while (n--)
