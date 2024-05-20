@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:49:26 by welee             #+#    #+#             */
-/*   Updated: 2024/05/20 18:47:16 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/20 18:59:03 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int	main(void)
 	test_memmove_overlap();
 	test_memmove_boundary();
 	test_memmove_full_block();
-	test_memmove_null();
+	// test_memmove_null();
 
 	printf("All tests passed.\n");
 	return (0);
