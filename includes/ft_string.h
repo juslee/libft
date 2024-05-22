@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 17:16:33 by welee             #+#    #+#             */
-/*   Updated: 2024/05/14 17:25:38 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/22 10:41:00 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,4 @@ char	*ft_strtrim(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-
-// Additional string functions
-// char	*ft_strcpy(char *dest, const char *src);
-// char	*ft_strncpy(char *dest, const char *src, size_t n);
-// char	*ft_strcat(char *dest, const char *src);
-// char	*ft_strncat(char *dest, const char *src, size_t n);
-// char	*ft_strstr(const char *haystack, const char *needle);
-// int		ft_strcmp(const char *s1, const char *s2);
-// char	*ft_strndup(const char *s, size_t n);
-
-// // Additional memory functions
-// void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 #endif
