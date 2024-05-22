@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 13:46:32 by welee             #+#    #+#             */
-/*   Updated: 2024/05/19 16:24:46 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/22 14:13:03 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,8 @@ static char	**ft_split_helper(char const *s, char c)
 			s += word_len;
 		}
 	}
-	return (split[i] = NULL, split);
+	split[i] = NULL;
+	return (split);
 }
 
 /**
