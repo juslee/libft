@@ -52,7 +52,6 @@ Mkfile.old
 dkms.conf
 
 # Local files
-objs/
-dist/
-bin/
-docs/
+dist/**/*
+docs/**/*
+.vscode/**/*
