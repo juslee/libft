@@ -1,0 +1,3 @@
+[submodule "francinette"]
+	path = francinette
+	url = git@github.com:xicodomingues/francinette.git
