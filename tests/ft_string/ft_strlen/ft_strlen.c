@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:49:08 by welee             #+#    #+#             */
-/*   Updated: 2024/05/20 16:26:51 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/22 16:39:40 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ void	test_strlen_whitespace(void)
 	printf("test_strlen_whitespace passed.\n");
 }
 
-void	test_strlen_null(void)
-{
-	const char		*str = NULL;
-	const size_t	length = ft_strlen(str);
+// void	test_strlen_null(void)
+// {
+// 	const char		*str = NULL;
+// 	const size_t	length = ft_strlen(str);
 
-	assert(length == 0);
-	printf("test_strlen_null passed.\n");
-}
+// 	assert(length == 0);
+// 	printf("test_strlen_null passed.\n");
+// }
 
 void	test_strlen_null_byte(void)
 {

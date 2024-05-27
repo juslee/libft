@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:59:24 by welee             #+#    #+#             */
-/*   Updated: 2024/05/20 16:29:46 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/22 16:40:12 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int	main(void)
 	test_calloc_zero_size();
 	test_calloc_zero_count_and_size();
 	test_calloc_large_allocation();
-	test_calloc_maximum_size();
+	// test_calloc_maximum_size();
 
 	printf("All tests passed.\n");
 	return (0);

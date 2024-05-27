@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 23:31:09 by welee             #+#    #+#             */
-/*   Updated: 2024/05/22 14:22:40 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/27 16:19:04 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_elem = ft_lstnew(content);
 		if (!new_elem)
 		{
-			del(content);
+			ft_lstdelone(new_lst, del);
 			ft_lstclear(&new_lst, del);
-			return (NULL) ;
+			return (NULL);
 		}
 		ft_lstadd_back(&new_lst, new_elem);
 		lst = lst->next;

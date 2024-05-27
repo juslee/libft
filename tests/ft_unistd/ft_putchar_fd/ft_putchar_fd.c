@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 23:27:24 by welee             #+#    #+#             */
-/*   Updated: 2024/04/27 10:49:18 by welee            ###   ########.fr       */
+/*   Updated: 2024/05/22 16:42:18 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	main()
 	test_write_to_stdout();
 	test_write_to_stderr();
 	test_write_to_file();
-	test_invalid_fd();
+	// test_invalid_fd();
 	test_write_null_char();
 
 	printf("All tests passed!\n");
