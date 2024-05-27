@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/05/19 13:59:19 by welee            ###   ########.fr        #
+#    Updated: 2024/05/27 16:49:05 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,17 +119,9 @@ dist: $(COMBINED_HEADER)
 
 dist_tests: dist
 	$(MAKE) $(DIST_DIR) all
-	@cp -f $(PUBLIC_DIR)/my_config.sh libft-war-machine/my_config.sh
-	libft-war-machine/grademe.sh
-	@cp -f $(PUBLIC_DIR)/my_config.sh Libftest/my_config.sh
-	Libftest/grademe.sh
 
 dist_tests_bonus: dist
 	$(MAKE) $(DIST_DIR) bonus
-	@cp -f $(PUBLIC_DIR)/my_config.sh libft-war-machine/my_config.sh
-	libft-war-machine/grademe.sh
-	@cp -f $(PUBLIC_DIR)/my_config.sh Libftest/my_config.sh
-	Libftest/grademe.sh
 
 tests: all
 	$(MAKE) $(TEST_DIR) all
