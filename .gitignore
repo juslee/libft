@@ -55,3 +55,4 @@ dkms.conf
 dist/**/*
 docs/**/*
 .vscode/**/*
+bin/**/*
