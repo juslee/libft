@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:25:09 by welee             #+#    #+#             */
-/*   Updated: 2024/05/20 16:32:58 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/16 14:41:03 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,25 +44,25 @@ static int	ft_isdigit(int c)
  * @note The function stops reading the string nptr at the first character that
  * is not a digit.
  */
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	int	sign;
 	int	result;
 
 	sign = 1;
 	result = 0;
-	while (ft_isspace(*nptr))
-		++nptr;
-	if (*nptr == '-' || *nptr == '+')
+	while (ft_isspace(*str))
+		++str;
+	if (*str == '-' || *str == '+')
 	{
-		if (*nptr == '-')
+		if (*str == '-')
 			sign = -1;
-		++nptr;
+		++str;
 	}
-	while (ft_isdigit(*nptr))
+	while (*str && ft_isdigit(*str))
 	{
-		result = result * 10 + *nptr - '0';
-		++nptr;
+		result = result * 10 + (*str - '0');
+		++str;
 	}
 	return (result * sign);
 }
