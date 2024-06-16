@@ -1,52 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_reduce.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 11:57:51 by welee             #+#    #+#             */
-/*   Updated: 2024/06/16 12:08:29 by welee            ###   ########.fr       */
+/*   Created: 2024/06/16 12:04:22 by welee             #+#    #+#             */
+/*   Updated: 2024/06/16 12:08:32 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_map.c
- * @brief Applies the function f to each element of the array given as argument
+ * @file ft_reduce.c
+ * @brief Reduces the array to a single value.
  */
 
 #include "libft.h"
 
 /**
- * @brief Applies the function f to each element of the array given as argument
- * @param array The array to map
+ * @brief Reduces the array to a single value.
+ * @param array The array to reduce
  * @param count The number of elements in the array
- * @param func The function to apply to each element
- * @return The array of mapped elements
+ * @param func The function to reduce the array with
+ * @param initial The initial value
+ * @return The reduced value
  */
-void	*ft_map(void *array, size_t count, t_map_func func)
+void	*ft_reduce(void *array, size_t count, t_reduce_func func, void *initial)
 {
 	void	*result;
 	size_t	i;
 	void	*element;
-	void	*mapped_element;
+	void	*temp;
 
-	result = malloc(count * sizeof(void *));
+	result = malloc(sizeof(void *));
 	if (!result)
 		return (NULL);
+	ft_memcpy(result, initial, sizeof(void *));
 	i = 0;
 	while (i < count)
 	{
 		element = (char *)array + i * sizeof(void *);
-		mapped_element = func(element);
-		if (!mapped_element)
+		temp = func(result, element);
+		if (temp)
 		{
-			free(result);
-			return (NULL);
+			ft_memcpy(result, temp, sizeof(void *));
+			free(temp);
 		}
-		ft_memcpy((char *)result + i * sizeof(void *),
-			mapped_element, sizeof(void *));
-		free(mapped_element);
+		else
+			return (free(result), NULL);
 		i++;
 	}
 	return (result);

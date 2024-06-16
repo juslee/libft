@@ -90,9 +90,9 @@ It will contain a lot of general purpose functions your programs will rely upon.
 ##### Custom functions
 - [x] ft_ternary
 - [x] ft_foreach
-- [x] ft_map
 - [x] ft_any
-- [ ] ft_reduce
+- [x] ft_map
+- [x] ft_reduce
 #### Functions from <queue.h> library
 ##### Queue functions
 - [x] ft_queue_init
@@ -151,3 +151,7 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [ ] ft_set_size
 - [ ] ft_set_is_empty
 - [ ] ft_set_clear
+#### Functions from <stdio.h> library
+##### Printf functions
+- [ ] ft_printf
+- [ ] ft_vprintf
