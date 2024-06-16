@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:57:24 by welee             #+#    #+#             */
-/*   Updated: 2024/05/09 16:00:42 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/16 10:39:52 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ t_queue	*ft_queue_init(ssize_t max_size)
 	t_queue	*queue;
 
 	queue = (t_queue *)malloc(sizeof(t_queue));
+	if (queue == NULL)
+		return (NULL);
 	queue->front = NULL;
 	queue->rear = NULL;
 	queue->size = 0;
