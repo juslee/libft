@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_stack_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/06/16 10:47:57 by welee            ###   ########.fr       */
+/*   Created: 2024/06/16 11:10:57 by welee             #+#    #+#             */
+/*   Updated: 2024/06/16 11:18:22 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "ft_btree.h"
-# include "ft_ctype.h"
-# include "ft_ctype_extra.h"
-# include "ft_func.h"
-# include "ft_list.h"
-# include "ft_queue.h"
-# include "ft_stack.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_string_extra.h"
-# include "ft_unistd.h"
-# include "ft_unistd_extra.h"
-#endif
+/**
+ * @file ft_stack_size.c
+ * @brief Gets the size of the stack.
+ */
+
+#include "libft.h"
+
+/**
+ * @brief Gets the size of the stack.
+ * @param stack The stack to get the size of
+ * @return The size of the stack
+ */
+int	ft_stack_size(t_stack *stack)
+{
+	return (stack->size);
+}

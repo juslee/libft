@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_stack_peek.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/06/16 10:47:57 by welee            ###   ########.fr       */
+/*   Created: 2024/06/16 10:58:19 by welee             #+#    #+#             */
+/*   Updated: 2024/06/16 10:59:53 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "ft_btree.h"
-# include "ft_ctype.h"
-# include "ft_ctype_extra.h"
-# include "ft_func.h"
-# include "ft_list.h"
-# include "ft_queue.h"
-# include "ft_stack.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_string_extra.h"
-# include "ft_unistd.h"
-# include "ft_unistd_extra.h"
-#endif
+/**
+ * @file ft_stack_peek.c
+ * @brief Peeks at the top of the stack.
+ */
+
+#include "libft.h"
+
+/**
+ * @brief Peeks at the top of the stack.
+ * @param stack The stack to peek at
+ * @return The data at the top of the stack
+ */
+void	*ft_stack_peek(t_stack *stack)
+{
+	if (ft_stack_is_empty(stack))
+		return (NULL);
+	return (stack->top->content);
+}

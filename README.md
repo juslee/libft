@@ -113,13 +113,13 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_btree_apply_by_level
 #### Functions from <stack.h> library
 ##### Stack functions
-- [ ] ft_stack_new
-- [ ] ft_stack_push
-- [ ] ft_stack_pop
-- [ ] ft_stack_top
-- [ ] ft_stack_size
-- [ ] ft_stack_is_empty
-- [ ] ft_stack_clear
+- [x] ft_stack_new
+- [x] ft_stack_push
+- [x] ft_stack_pop
+- [x] ft_stack_top
+- [x] ft_stack_size
+- [x] ft_stack_is_empty
+- [x] ft_stack_clear
 #### Functions from <vector.h> library
 ##### Vector functions
 - [ ] ft_vector_new
