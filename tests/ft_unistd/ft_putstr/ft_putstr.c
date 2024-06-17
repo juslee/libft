@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:13:37 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 13:22:15 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/17 15:59:04 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,12 @@ void	read_output_file(char *buffer, size_t size)
 	len = fread(buffer, 1, size - 1, output);
 	buffer[len] = '\0';  // Null-terminate the string
 	fclose(output);
+	// Remove the file
+	if (remove(OUTPUT_FILE) != 0)
+	{
+		perror("remove");
+		exit(EXIT_FAILURE);
+	}
 }
 
 void	test_ft_putstr_null(void)
