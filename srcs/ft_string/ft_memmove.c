@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:13:44 by welee             #+#    #+#             */
-/*   Updated: 2024/05/20 18:41:21 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/17 18:16:39 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char		*dst_ptr;
 	unsigned const char	*src_ptr;
 
-	if (!dst && !src && len != 0)
+	if (!dst && !src && len == 0)
 		return (NULL);
 	if (dst < src)
 	{
