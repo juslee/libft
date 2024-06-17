@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 11:10:57 by welee             #+#    #+#             */
-/*   Updated: 2024/06/16 11:18:22 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/17 13:32:33 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@
  */
 int	ft_stack_size(t_stack *stack)
 {
+	if (stack == NULL)
+		return (0);
 	return (stack->size);
 }

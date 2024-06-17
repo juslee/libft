@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:34:56 by welee             #+#    #+#             */
-/*   Updated: 2024/04/26 22:48:01 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/17 13:04:43 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ int	main(void)
 	test_islower_uppercase();
 	test_islower_non_alpha();
 	test_islower_extended_ascii();
-
 	printf("ft_islower: all tests passed\n");
 	return (0);
 }

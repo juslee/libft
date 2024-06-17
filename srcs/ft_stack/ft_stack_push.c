@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 10:49:19 by welee             #+#    #+#             */
-/*   Updated: 2024/06/16 11:17:25 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/17 13:31:10 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	ft_stack_push(t_stack *stack, void *data)
 {
 	t_list	*new_node;
 
+	if (stack == NULL || data == NULL)
+		return (0);
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (new_node == NULL)
 		return (0);

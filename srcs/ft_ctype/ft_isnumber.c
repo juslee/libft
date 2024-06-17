@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:15:28 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 10:17:14 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/17 13:10:37 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,20 @@
  */
 int	ft_isnumber(char *str)
 {
-	if (*str == '-' || *str == '+')
-		str++;
-	if (!*str)
+	int	i;
+
+	if (!str || *str == '\0')
 		return (0);
-	while (*str)
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
 	{
-		if (!ft_isdigit(*str))
+		if (!ft_isdigit(str[i]))
 			return (0);
-		str++;
+		i++;
 	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 11:10:03 by welee             #+#    #+#             */
-/*   Updated: 2024/06/16 11:10:38 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/17 13:32:42 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  */
 void	*ft_stack_top(t_stack *stack)
 {
-	if (ft_stack_is_empty(stack))
+	if (stack == NULL || ft_stack_is_empty(stack))
 		return (NULL);
 	return (stack->top->content);
 }

@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 11:03:18 by welee             #+#    #+#             */
-/*   Updated: 2024/06/16 11:06:39 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/17 13:40:25 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_stack_clear(t_stack *stack)
 {
 	void	*data;
 
+	if (stack == NULL)
+		return ;
 	while (!ft_stack_is_empty(stack))
 	{
 		data = ft_stack_pop(stack);
@@ -33,5 +35,6 @@ void	ft_stack_clear(t_stack *stack)
 		else
 			free(data);
 	}
-	free(stack);
+	stack->size = 0;
+	stack->top = NULL;
 }
