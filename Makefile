@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 16:02:52 by welee             #+#    #+#              #
-#    Updated: 2024/06/16 15:08:58 by welee            ###   ########.fr        #
+#    Updated: 2024/06/17 10:30:03 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ WHOAMI = $(whoami)
 SRCS = $(shell find $(SRCS_DIR) -name '*.c')
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 #OBJS_ALL = $(SRCS_ALL:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
-HEADERS = $(shell find $(INCLUDES_DIR) -name '*.h')
+HEADERS = $(shell find $(INCLUDES_DIR) -name '*.h' | sort)
 # HEADERS = $(shell find $(INCLUDES_DIR) \
 # 	-name ft_ctype.h -or -name ft_stdlib.h -or -name ft_string.h -or -name ft_list.h -or -name ft_unistd.h)
 COMBINED_HEADER = $(DIST_DIR)/libft.h
