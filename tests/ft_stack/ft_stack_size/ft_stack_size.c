@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:00:46 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 14:01:14 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/20 16:58:16 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	test_ft_stack_size_with_empty_stack(void)
 	size = ft_stack_size(stack);
 	assert(size == 0 && "Stack size should be 0 for empty stack");
 	ft_stack_clear(stack);
-	free(stack);
 	printf("test_ft_stack_size_with_empty_stack passed\n");
 }
 
@@ -52,7 +51,6 @@ void	test_ft_stack_size_with_non_empty_stack(void)
 	size = ft_stack_size(stack);
 	assert(size == 3 && "Stack size should be 3 after three pushes");
 	ft_stack_clear(stack);
-	free(stack);
 	printf("test_ft_stack_size_with_non_empty_stack passed\n");
 }
 

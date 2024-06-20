@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:46:05 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 13:47:39 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/20 16:57:47 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	test_ft_stack_is_empty_with_empty_stack(void)
 	assert(stack != NULL && "Failed to create stack");
 	assert(ft_stack_is_empty(stack) == 1 && "Stack should be empty");
 	ft_stack_clear(stack);
-	free(stack);
 	printf("test_ft_stack_is_empty_with_empty_stack passed\n");
 }
 
@@ -41,7 +40,6 @@ void	test_ft_stack_is_empty_with_non_empty_stack(void)
 	ft_stack_push(stack, &element2);
 	assert(ft_stack_is_empty(stack) == 0 && "Stack should not be empty");
 	ft_stack_clear(stack);
-	free(stack);
 	printf("test_ft_stack_is_empty_with_non_empty_stack passed\n");
 }
 

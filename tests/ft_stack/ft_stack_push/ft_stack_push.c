@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:58:13 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 13:59:31 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/20 17:00:01 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	test_ft_stack_push_with_valid_data(void)
 	assert(*(int *)stack->top->content == element3
 		&& "Top element should be element3");
 	ft_stack_clear(stack);
-	free(stack);
 	printf("test_ft_stack_push_with_valid_data passed\n");
 }
 
@@ -69,7 +68,6 @@ void	test_ft_stack_push_with_null_data(void)
 	result = ft_stack_push(stack, NULL);
 	assert(result == 0 && "Pushing NULL data should return 0");
 	ft_stack_clear(stack);
-	free(stack);
 	printf("test_ft_stack_push_with_null_data passed\n");
 }
 

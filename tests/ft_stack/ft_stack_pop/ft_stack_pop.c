@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:54:33 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 13:56:58 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/20 16:58:40 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	test_ft_stack_pop_with_empty_stack(void)
 	popped_data = ft_stack_pop(stack);
 	assert(popped_data == NULL && "Popped data should be NULL for empty stack");
 	ft_stack_clear(stack);
-	free(stack);
 	printf("test_ft_stack_pop_with_empty_stack passed\n");
 }
 
@@ -58,7 +57,6 @@ void	test_ft_stack_pop_with_non_empty_stack(void)
 	assert(*(int *)popped_data == element1 && "Popped data should be the top element (element1)");
 	free(popped_data);
 	ft_stack_clear(stack);
-	free(stack);
 	printf("test_ft_stack_pop_with_non_empty_stack passed\n");
 }
 

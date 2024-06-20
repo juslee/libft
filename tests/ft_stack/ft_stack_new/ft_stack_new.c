@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:49:29 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 13:51:07 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/20 17:00:52 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ void	test_ft_stack_new_with_valid_parameters(void)
 	assert(stack->free_func == free_func && "Stack free function is incorrect");
 	assert(stack->top == NULL && "Stack top is not NULL");
 	assert(stack->size == 0 && "Stack size is not zero");
-
-	free(stack);
+	ft_stack_clear(stack);
 	printf("test_ft_stack_new_with_valid_parameters passed\n");
 }
 
@@ -48,8 +47,7 @@ void	test_ft_stack_new_with_zero_data_size(void)
 	assert(stack->free_func == free_func && "Stack free function is incorrect");
 	assert(stack->top == NULL && "Stack top is not NULL");
 	assert(stack->size == 0 && "Stack size is not zero");
-
-	free(stack);
+	ft_stack_clear(stack);
 	printf("test_ft_stack_new_with_zero_data_size passed\n");
 }
 
@@ -67,8 +65,7 @@ void	test_ft_stack_new_with_null_free_func(void)
 	assert(stack->free_func == free_func && "Stack free function is incorrect");
 	assert(stack->top == NULL && "Stack top is not NULL");
 	assert(stack->size == 0 && "Stack size is not zero");
-
-	free(stack);
+	ft_stack_clear(stack);
 	printf("test_ft_stack_new_with_null_free_func passed\n");
 }
 

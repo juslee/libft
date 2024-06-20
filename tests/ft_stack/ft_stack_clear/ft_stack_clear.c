@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:23:47 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 13:43:17 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/20 16:59:34 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	test_ft_stack_clear_empty_stack(void)
 		&& "Stack size is not zero after clearing empty stack");
 	assert(stack->top == NULL
 		&& "Stack top is not NULL after clearing empty stack");
-	free(stack);
 	printf("test_ft_stack_clear_empty_stack passed\n");
 }
 
@@ -50,7 +49,6 @@ void	test_ft_stack_clear_non_empty_stack(void)
 		&& "Stack size is not zero after clearing non-empty stack");
 	assert(stack->top == NULL
 		&& "Stack top is not NULL after clearing non-empty stack");
-	free(stack);
 	printf("test_ft_stack_clear_non_empty_stack passed\n");
 }
 

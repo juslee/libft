@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bubblesort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/06/20 16:33:34 by welee            ###   ########.fr       */
+/*   Created: 2024/06/20 15:55:35 by welee             #+#    #+#             */
+/*   Updated: 2024/06/20 15:56:07 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "ft_btree.h"
-# include "ft_ctype.h"
-# include "ft_ctype_extra.h"
-# include "ft_func.h"
-# include "ft_list.h"
-# include "ft_queue.h"
-# include "ft_sort.h"
-# include "ft_stack.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_string_extra.h"
-# include "ft_unistd.h"
-# include "ft_unistd_extra.h"
-#endif
+#include "libft.h"
+
+void	ft_bubblesort(void **arr, int n, int (*cmp)(void *, void *))
+{
+	int		i;
+	int		j;
+	void	*tmp;
+
+	i = 0;
+	while (i < n - 1)
+	{
+		j = 0;
+		while (j < n - i - 1)
+		{
+			if (cmp(arr[j], arr[j + 1]) > 0)
+			{
+				tmp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
