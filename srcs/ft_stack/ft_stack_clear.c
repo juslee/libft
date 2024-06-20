@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 11:03:18 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 13:40:25 by welee            ###   ########.fr       */
+/*   Updated: 2024/06/20 13:58:37 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void	ft_stack_clear(t_stack *stack)
 	}
 	stack->size = 0;
 	stack->top = NULL;
+	free(stack);
 }
