@@ -5,57 +5,77 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 13:23:47 by welee             #+#    #+#             */
-/*   Updated: 2024/06/20 16:59:34 by welee            ###   ########.fr       */
+/*   Created: 2024/07/20 18:25:36 by welee             #+#    #+#             */
+/*   Updated: 2024/07/20 18:26:21 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <assert.h>
-#include "libft.h"
+#include <stdio.h>
+#include "ft_stack.h"
 
-void	test_ft_stack_clear_empty_stack(void)
+void	test_ft_stack_clear_int(void)
 {
 	t_stack	*stack;
+	int		value;
 
-	stack = ft_stack_new(sizeof(int), free);
-	assert(stack != NULL && "Failed to create stack");
+	stack = ft_stack_new(sizeof(int));
+	value = 42;
+	ft_stack_push(stack, &value);
 	ft_stack_clear(stack);
-	assert(stack->size == 0
-		&& "Stack size is not zero after clearing empty stack");
-	assert(stack->top == NULL
-		&& "Stack top is not NULL after clearing empty stack");
-	printf("test_ft_stack_clear_empty_stack passed\n");
+	printf("test_ft_stack_clear_int passed\n");
 }
 
-void	test_ft_stack_clear_non_empty_stack(void)
+void	test_ft_stack_clear_empty_int(void)
 {
 	t_stack	*stack;
-	int		element1;
-	int		element2;
-	int		element3;
 
-	element1 = 1;
-	element2 = 2;
-	element3 = 3;
-	stack = ft_stack_new(sizeof(int), free);
-	assert(stack != NULL && "Failed to create stack");
-	ft_stack_push(stack, &element1);
-	ft_stack_push(stack, &element2);
-	ft_stack_push(stack, &element3);
+	stack = ft_stack_new(sizeof(int));
 	ft_stack_clear(stack);
-	assert(stack->size == 0
-		&& "Stack size is not zero after clearing non-empty stack");
-	assert(stack->top == NULL
-		&& "Stack top is not NULL after clearing non-empty stack");
-	printf("test_ft_stack_clear_non_empty_stack passed\n");
+	printf("test_ft_stack_clear_empty_int passed\n");
+}
+
+void	test_ft_stack_clear_null_int(void)
+{
+	ft_stack_clear(NULL);
+	printf("test_ft_stack_clear_null_int passed\n");
+}
+
+void	test_ft_stack_clear_char(void)
+{
+	t_stack	*stack;
+	char	char_value;
+
+	stack = ft_stack_new(sizeof(char));
+	char_value = 'a';
+	ft_stack_push(stack, &char_value);
+	ft_stack_clear(stack);
+	printf("test_ft_stack_clear_char passed\n");
+}
+
+void	test_ft_stack_clear_empty_char(void)
+{
+	t_stack	*stack;
+
+	stack = ft_stack_new(sizeof(char));
+	ft_stack_clear(stack);
+	printf("test_ft_stack_clear_empty_char passed\n");
+}
+
+void	test_ft_stack_clear_null_char(void)
+{
+	ft_stack_clear(NULL);
+	printf("test_ft_stack_clear_null_char passed\n");
 }
 
 int	main(void)
 {
-	test_ft_stack_clear_empty_stack();
-	test_ft_stack_clear_non_empty_stack();
-	printf("All tests passed for ft_stack_clear\n");
+	test_ft_stack_clear_int();
+	test_ft_stack_clear_empty_int();
+	test_ft_stack_clear_null_int();
+	test_ft_stack_clear_char();
+	test_ft_stack_clear_empty_char();
+	test_ft_stack_clear_null_char();
+	printf("All tests passed\n");
 	return (0);
 }

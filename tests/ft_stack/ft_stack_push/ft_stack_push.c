@@ -5,77 +5,111 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 13:58:13 by welee             #+#    #+#             */
-/*   Updated: 2024/06/20 17:00:01 by welee            ###   ########.fr       */
+/*   Created: 2024/07/20 18:14:50 by welee             #+#    #+#             */
+/*   Updated: 2024/07/20 18:41:53 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <assert.h>
-#include "libft.h"
+#include <stdio.h>
+#include "ft_stack.h"
 
-void	test_ft_stack_push_with_valid_data(void)
+void	test_ft_stack_push_int(void)
 {
 	t_stack	*stack;
-	int		element1;
-	int		element2;
-	int		element3;
+	int		value;
 
-	element1 = 1;
-	element2 = 2;
-	element3 = 3;
-	stack = ft_stack_new(sizeof(int), free);
-	assert(stack != NULL && "Failed to create stack");
-	assert(ft_stack_push(stack, &element1) == 1
-		&& "Failed to push element1 onto stack");
-	assert(stack->size == 1 && "Stack size should be 1 after one push");
-	assert(*(int *)stack->top->content == element1
-		&& "Top element should be element1");
-	assert(ft_stack_push(stack, &element2) == 1
-		&& "Failed to push element2 onto stack");
-	assert(stack->size == 2 && "Stack size should be 2 after two pushes");
-	assert(*(int *)stack->top->content == element2
-		&& "Top element should be element2");
-	assert(ft_stack_push(stack, &element3) == 1
-		&& "Failed to push element3 onto stack");
-	assert(stack->size == 3 && "Stack size should be 3 after three pushes");
-	assert(*(int *)stack->top->content == element3
-		&& "Top element should be element3");
+	stack = ft_stack_new(sizeof(int));
+	assert(stack != NULL);
+	value = 42;
+	ft_stack_push(stack, &value);
+	assert(stack->top != NULL);
+	assert(*(int *)stack->top->content == value);
 	ft_stack_clear(stack);
-	printf("test_ft_stack_push_with_valid_data passed\n");
+	printf("test_ft_stack_push_int passed.\n");
 }
 
-void	test_ft_stack_push_with_null_stack(void)
-{
-	int		element;
-	int		result;
-
-	element = 1;
-	result = ft_stack_push(NULL, &element);
-	assert(result == 0 && "Pushing to NULL stack should return 0");
-	printf("test_ft_stack_push_with_null_stack passed\n");
-}
-
-void	test_ft_stack_push_with_null_data(void)
+void	test_ft_stack_push_zero_int(void)
 {
 	t_stack	*stack;
-	int		result;
+	int		value;
 
-	stack = ft_stack_new(sizeof(int), free);
-	assert(stack != NULL && "Failed to create stack");
-
-	result = ft_stack_push(stack, NULL);
-	assert(result == 0 && "Pushing NULL data should return 0");
+	stack = ft_stack_new(sizeof(int));
+	assert(stack != NULL);
+	value = 0;
+	ft_stack_push(stack, &value);
+	assert(stack->top != NULL);
+	assert(*(int *)stack->top->content == value);
 	ft_stack_clear(stack);
-	printf("test_ft_stack_push_with_null_data passed\n");
+	printf("test_ft_stack_push_zero_int passed.\n");
+}
+
+void	test_ft_stack_push_null_int(void)
+{
+	t_stack	*stack;
+	int		value;
+
+	stack = ft_stack_new(sizeof(int));
+	assert(stack != NULL);
+	value = 42;
+	ft_stack_push(NULL, &value);
+	assert(stack->top == NULL);
+	ft_stack_clear(stack);
+	printf("test_ft_stack_push_null_int passed.\n");
+}
+
+void	test_ft_stack_push_char(void)
+{
+	t_stack	*stack;
+	char	char_value;
+
+	stack = ft_stack_new(sizeof(char));
+	assert(stack != NULL);
+	char_value = 'a';
+	ft_stack_push(stack, &char_value);
+	assert(stack->top != NULL);
+	assert(*(char *)stack->top->content == char_value);
+	ft_stack_clear(stack);
+	printf("test_ft_stack_push_char passed.\n");
+}
+
+void	test_ft_stack_push_null_char(void)
+{
+	t_stack	*stack;
+	char	char_value;
+
+	stack = ft_stack_new(sizeof(char));
+	assert(stack != NULL);
+	char_value = 'a';
+	ft_stack_push(NULL, &char_value);
+	assert(stack->top == NULL);
+	ft_stack_clear(stack);
+	printf("test_ft_stack_push_null_char passed.\n");
+}
+
+void	test_ft_stack_push_zero_char(void)
+{
+	t_stack	*stack;
+	char	char_value;
+
+	stack = ft_stack_new(sizeof(char));
+	assert(stack != NULL);
+	char_value = '\0';
+	ft_stack_push(stack, &char_value);
+	assert(stack->top != NULL);
+	assert(*(char *)stack->top->content == char_value);
+	ft_stack_clear(stack);
+	printf("test_ft_stack_push_zero_char passed.\n");
 }
 
 int	main(void)
 {
-	test_ft_stack_push_with_valid_data();
-	test_ft_stack_push_with_null_stack();
-	test_ft_stack_push_with_null_data();
-	printf("All tests passed for ft_stack_push\n");
+	test_ft_stack_push_int();
+	test_ft_stack_push_zero_int();
+	test_ft_stack_push_null_int();
+	test_ft_stack_push_char();
+	test_ft_stack_push_null_char();
+	test_ft_stack_push_zero_char();
+	printf("All tests passed!\n");
 	return (0);
 }

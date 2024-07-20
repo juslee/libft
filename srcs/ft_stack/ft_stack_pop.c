@@ -5,34 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/16 10:55:31 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 13:31:27 by welee            ###   ########.fr       */
+/*   Created: 2024/07/20 17:16:01 by welee             #+#    #+#             */
+/*   Updated: 2024/07/20 17:17:22 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @file ft_stack_pop.c
- * @brief Pops data from the stack.
- */
+#include "ft_stack.h"
 
-#include "libft.h"
-
-/**
- * @brief Pops data from the stack.
- * @param stack The stack to pop data from
- * @return The data that was popped from the stack
- */
 void	*ft_stack_pop(t_stack *stack)
 {
-	t_list	*temp;
-	void	*popped_data;
+	t_list	*top;
+	void	*value;
 
-	if (stack == NULL || ft_stack_is_empty(stack))
+	if (!stack || !stack->top)
 		return (NULL);
-	temp = stack->top;
-	popped_data = temp->content;
+	top = stack->top;
 	stack->top = stack->top->next;
-	free(temp);
-	stack->size--;
-	return (popped_data);
+	value = top->content;
+	free(top);
+	return (value);
 }

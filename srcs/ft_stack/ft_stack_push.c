@@ -5,42 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/16 10:49:19 by welee             #+#    #+#             */
-/*   Updated: 2024/06/17 13:31:10 by welee            ###   ########.fr       */
+/*   Created: 2024/07/20 17:09:04 by welee             #+#    #+#             */
+/*   Updated: 2024/07/20 18:44:21 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @file ft_stack_push.c
- * @brief Pushes data onto the stack.
- */
+#include "ft_string.h"
+#include "ft_stack.h"
 
-#include "libft.h"
-
-/**
- * @brief Pushes data onto the stack.
- * @param stack The stack to push data onto
- * @param data The data to push onto the stack
- * @return 1 if the data was successfully pushed onto the stack, 0 otherwise
- */
-int	ft_stack_push(t_stack *stack, void *data)
+void	ft_stack_push(t_stack *stack, void *value)
 {
 	t_list	*new_node;
 
-	if (stack == NULL || data == NULL)
-		return (0);
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (new_node == NULL)
-		return (0);
-	new_node->content = malloc(stack->data_size);
-	if (new_node->content == NULL)
+	if (!stack || !value)
+		return ;
+	new_node = ft_lstnew(malloc(stack->elem_size));
+	if (!new_node || !new_node->content)
 	{
-		free(new_node);
-		return (0);
+		if (new_node)
+			free(new_node);
+		return ;
 	}
-	ft_memcpy(new_node->content, data, stack->data_size);
-	new_node->next = stack->top;
-	stack->top = new_node;
-	stack->size++;
-	return (1);
+	ft_memcpy(new_node->content, value, stack->elem_size);
+	ft_lstadd_front(&stack->top, new_node);
 }

@@ -120,13 +120,6 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_stack_size
 - [x] ft_stack_is_empty
 - [x] ft_stack_clear
-#### Functions from <sort.h> library
-##### Stack functions
-- [ ] ft_sort_bubble
-- [ ] ft_sort_insertion
-- [ ] ft_sort_selection
-- [ ] ft_sort_quick
-- [ ] ft_sort_merge
 #### Functions from <vector.h> library
 ##### Vector functions
 - [ ] ft_vector_new
