@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 14:35:06 by welee             #+#    #+#              #
-#    Updated: 2024/06/17 19:11:59 by welee            ###   ########.fr        #
+#    Updated: 2024/07/22 17:40:43 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ ifeq ($(UNAME), Darwin)
 	CFLAGS += -DDEFAULT_INCLUDE
 else ifeq ($(UNAME), Linux)
 # Linux specific settings
-#	CFLAGS += -I/usr/include/bsd
+	CFLAGS += -I/usr/include/bsd
 	LDFLAGS += -lbsd
 endif
 
@@ -52,7 +52,7 @@ all: $(EXECS) $(BONUS_EXECS)
 %: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $< $(LDFLAGS)
 	$@
-	$(RM) $@
+#	$(RM) $@
 clean:
 	${RM} $(OBJS) $(EXECS)
 	${RM} $(BONUS_OBJS) $(BONUS_EXECS)

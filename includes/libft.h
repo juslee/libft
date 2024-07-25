@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:35:11 by welee             #+#    #+#             */
-/*   Updated: 2024/06/20 16:33:34 by welee            ###   ########.fr       */
+/*   Updated: 2024/07/22 15:05:38 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include "ft_func.h"
 # include "ft_list.h"
 # include "ft_queue.h"
-# include "ft_sort.h"
 # include "ft_stack.h"
 # include "ft_stdlib.h"
 # include "ft_string.h"
