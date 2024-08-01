@@ -72,6 +72,7 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_isgraph
 - [x] ft_ispunct
 - [x] ft_isxdigit
+- [x] ft_isnumber
 #### Functions from <string.h> library
 ##### String manipulation functions
 - [x] ft_strcpy
@@ -113,13 +114,13 @@ It will contain a lot of general purpose functions your programs will rely upon.
 - [x] ft_btree_apply_by_level
 #### Functions from <stack.h> library
 ##### Stack functions
-- [x] ft_stack_new
-- [x] ft_stack_push
-- [x] ft_stack_pop
-- [x] ft_stack_top
-- [x] ft_stack_size
-- [x] ft_stack_is_empty
-- [x] ft_stack_clear
+- [ ] ft_stack_new
+- [ ] ft_stack_push
+- [ ] ft_stack_pop
+- [ ] ft_stack_top
+- [ ] ft_stack_size
+- [ ] ft_stack_is_empty
+- [ ] ft_stack_clear
 #### Functions from <vector.h> library
 ##### Vector functions
 - [ ] ft_vector_new
@@ -155,3 +156,10 @@ It will contain a lot of general purpose functions your programs will rely upon.
 ##### Printf functions
 - [ ] ft_printf
 - [ ] ft_vprintf
+#### Functions from <get_next_line.h> library
+##### Get Next Line functions
+- [ ] get_next_line
+#### Functions from <math.h> library
+##### Math functions
+- [x] ft_max
+- [x] ft_min
