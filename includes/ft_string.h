@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 17:16:33 by welee             #+#    #+#             */
-/*   Updated: 2024/05/22 10:41:00 by welee            ###   ########.fr       */
+/*   Updated: 2024/08/18 20:58:15 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,7 @@ char	*ft_strtrim(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+// Extra functions
+long	ft_strtol(const char *str, char **endptr, int base);
 #endif
