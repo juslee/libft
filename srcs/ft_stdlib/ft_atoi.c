@@ -16,6 +16,7 @@
  */
 
 // #include "libft.h"
+#include <limits.h>
 
 /**
  * @brief Check if the character is a space.
@@ -62,6 +63,8 @@ int	ft_atoi(const char *str)
 	while (*str && ft_isdigit(*str))
 	{
 		result = result * 10 + (*str - '0');
+		if (result > INT_MAX || result < INT_MIN)
+			return (-1);
 		++str;
 	}
 	return (result * sign);
