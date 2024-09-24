@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdlib.h                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 13:36:49 by welee             #+#    #+#             */
-/*   Updated: 2024/09/24 17:40:10 by welee            ###   ########.fr       */
+/*   Created: 2024/09/24 17:14:59 by welee             #+#    #+#             */
+/*   Updated: 2024/09/24 17:35:19 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STDLIB_H
-# define FT_STDLIB_H
-# include <stddef.h>
+#include "libft.h"
 
-// Memory manipulation functions
-int		ft_atoi(const char *nptr);
-long	ft_atol(const char *nptr);
-void	*ft_calloc(size_t count, size_t size);
-char	*ft_itoa(int n);
-void	*ft_realloc(void *ptr, size_t new_size);
+void	*ft_realloc(void *ptr, size_t new_size)
+{
+	void	*new_ptr;
 
-#endif
+	if (new_size == 0)
+		return (free(ptr), NULL);
+	if (ptr == NULL)
+		return (malloc(new_size));
+	new_ptr = malloc(new_size);
+	if (!new_ptr)
+		return (NULL);
+	ft_memcpy(new_ptr, ptr, new_size);
+	free(ptr);
+	return (new_ptr);
+}
